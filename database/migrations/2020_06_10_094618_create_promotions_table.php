@@ -17,8 +17,8 @@ class CreatePromotionsTable extends Migration
             $table->id();
             $table->string('name', 50);
 			$table->decimal('price', 5, 2);
-            $table->integer('start');
-            $table->integer('end');
+            $table->date('start');
+            $table->date('end');
             $table->timestamps();
         });
     }

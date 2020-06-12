@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\House;
+use App\Promotion;
 
 class HouseController extends Controller
 {
@@ -16,6 +17,9 @@ class HouseController extends Controller
     public function index()
     {
         $houses = House::all();
+        $promotions = Promotion::all();
+        dd($promotions);
+
 
         return view('admin.houses.index',compact('houses'));
     }
