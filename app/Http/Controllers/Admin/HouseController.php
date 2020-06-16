@@ -4,8 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 use App\House;
 use App\Promotion;
+use App\Service;
+use App\User;
+use App\Photo;
 
 class HouseController extends Controller
 {
@@ -16,10 +24,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::all();
-        $promotions = Promotion::all();
-        dd($promotions);
-
+        $houses = House::where('user_id', '=', Auth::id())->get();
+        // \Auth::user()
 
         return view('admin.houses.index',compact('houses'));
     }
@@ -31,7 +37,9 @@ class HouseController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+
+        return view('admin.houses.create', compact('services'));
     }
 
     /**
@@ -42,7 +50,54 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        if(!isset($data['visible'])) {
+            $data['visible'] = 0;
+        } else {
+            $data['visible'] = 1;
+        }
+
+        $data['user_id'] = Auth::id();
+        $validator = Validator::make($data, [
+            'title' => 'required|string',
+            'description' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'rooms' => 'required',
+            'beds' => 'required',
+            // 'photo' => 'required|string',
+            'bathrooms' => 'required',
+            'mq' => 'required',
+            'address' => 'required',
+            'services' => 'required|array',
+            'services.*' => 'exists:services,id'
+        ]);
+
+        if (isset($data['photo'])) {
+            Storage::disk('public')->put('images', $data['photo']);
+        }
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'Campo mancante')
+            ->withErrors($validator)
+                ->withInput();
+        }
+
+        $house = new House;
+        $house->fill($data);
+        $saved = $house->save();
+
+        if(!$saved) {
+            abort('404');
+        }
+
+        if(isset($data['services'])) {
+            $house->services()->attach($data['services']);
+        }
+
+
+        return redirect()->route('admin.houses.index')->with('status', 'Annuncio pubblicato con successo');
     }
 
     /**
@@ -53,7 +108,9 @@ class HouseController extends Controller
      */
     public function show($id)
     {
-        //
+        $house = House::findOrFail($id);
+
+        return view('admin.houses.show', compact('house'));
     }
 
     /**
@@ -64,7 +121,9 @@ class HouseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $house = House::findOrFail($id);
+        $services = Service::all();
+        return view('admin.houses.edit', compact('house', 'services'));
     }
 
     /**
@@ -76,7 +135,51 @@ class HouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $house = House::findOrFail($id);
+
+        if(!isset($data['visible'])) {
+            $data['visible'] = 0;
+        } else {
+            $data['visible'] = 1;
+        }
+
+        $data['user_id'] = Auth::id();
+        $validator = Validator::make($data, [
+            'title' => 'required|string',
+            'description' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'rooms' => 'required',
+            'beds' => 'required',
+            // 'photo' => 'required|string',
+            'bathrooms' => 'required',
+            'mq' => 'required',
+            'address' => 'required',
+            'services' => 'required|array',
+            'services.*' => 'exists:services,id'
+        ]);
+
+        if (isset($data['photo'])) {
+            Storage::disk('public')->put('images', $data['photo']);
+        }
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'Campo mancante')
+            ->withErrors($validator)
+                ->withInput();
+        }
+
+        $house->fill($data);
+        $update = $house->update();
+
+        if(!$update) {
+            abort('404');
+        }
+
+        $house->services()->sync($data['services']);
+
+        return redirect()->route('admin.houses.show', $house->id);
     }
 
     /**
@@ -87,6 +190,13 @@ class HouseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $house = House::findOrFail($id);
+
+        $house->services()->detach();
+        $house->photos()->detach();
+
+        $deleted = $house->delete();
+
+        return redirect()->back()->with('status', 'Annuncio cancellato con successo');
     }
 }

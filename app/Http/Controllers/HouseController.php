@@ -18,7 +18,7 @@ class HouseController extends Controller
     {
         $houses = House::all();
         // $promotions = Promotion::all();
-        return view('admin.houses.index',compact('houses'));
+        return view('guest.index',compact('houses'));
     }
 
     /**
