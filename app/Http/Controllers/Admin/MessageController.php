@@ -22,7 +22,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-    
+
     // Trovo il collegamento tra creatori delle case e utente loggato
     $houses = House::where('user_id', Auth::id())->get();
     // Creo un array per pusshare dentro i miei id
