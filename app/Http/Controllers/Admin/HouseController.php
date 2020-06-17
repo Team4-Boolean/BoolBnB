@@ -18,7 +18,7 @@ class HouseController extends Controller
     {
         $houses = House::all();
         $promotions = Promotion::all();
-        dd($promotions);
+        //dd($promotions);
 
 
         return view('admin.houses.index',compact('houses'));
