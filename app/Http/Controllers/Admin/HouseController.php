@@ -14,6 +14,7 @@ use App\Promotion;
 use App\Service;
 use App\User;
 use App\Photo;
+use App\Message;
 
 class HouseController extends Controller
 {
@@ -110,7 +111,11 @@ class HouseController extends Controller
     {
         $house = House::findOrFail($id);
 
-        return view('admin.houses.show', compact('house'));
+        // CONTO I MESSAGGI IN BASE AD OGNI ID STANZA, E POI LI PORTO NELLO SHOW DEL MIO PANNELLO AMMINISTRATORE
+        // Quanti messaggi mi sono arrivati in questo annuncio?
+        $message = Message::where('house_id', $id)->count();
+
+        return view('admin.houses.show', compact('house', 'message'));
     }
 
     /**
