@@ -22,21 +22,21 @@ Su BoolBnB troverà l'appartamento adatto ad ogni tua esigenza.
 
 Per progettare il tutto, il team si è avvalso dell'utilizzo di piattaforme come 
 
-**[GitHub teams](https://github.com/team#organizations)**
+<h4 align="center"> GitHub Teams </h4>
 
 <p align="center">
 <a href="https://github.com/team#organizations"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="GitHub" width="170"></a>
 
-**[Discord](https://discord.com)**
+<p align="center"> Discord </p>
 
 <p align="center">
 <a href="https://discord.com"><img src="https://discord.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" alt="Discord" width="170"></a>
   
-**[Laravel](https://laravel.com)**
+<p align="center"> Laravel </p>
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="350"></p>
   
-**[Atom](https://atom.io)**
+<h4 align="center"> Atom </h4>
 
 <p align="center">
 <a href="https://atom.io"><img src="https://aws1.discourse-cdn.com/business6/uploads/github_atom/original/3X/9/1/91cdcb0091c80a4ad6d74746fa4aec054f2278bc.png" alt="Atom" width="250"></a>
