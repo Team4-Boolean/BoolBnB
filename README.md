@@ -1,12 +1,5 @@
 <p align="center"><img src="https://www.boolean.careers/images/common/logo.png" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
 ## About BoolBnB
 
 BoolBnB è una applicazione per trovare e gestire l'affitto di appartamenti.
@@ -39,12 +32,16 @@ Per progettare il tutto, il team si è avvalso dell'utilizzo di piattaforme come
 <p align="center">
 <a href="https://discord.com"><img src="https://discord.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" alt="Discord" width="170"></a>
   
+**[Laravel](https://laravel.com)**
+
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="350"></p>
+  
 **[Atom](https://atom.io)**
 
 <p align="center">
-<a href="https://atom.io"><img src="https://aws1.discourse-cdn.com/business6/uploads/github_atom/original/3X/9/1/91cdcb0091c80a4ad6d74746fa4aec054f2278bc.png" alt="Atom" width="170"></a>
+<a href="https://atom.io"><img src="https://aws1.discourse-cdn.com/business6/uploads/github_atom/original/3X/9/1/91cdcb0091c80a4ad6d74746fa4aec054f2278bc.png" alt="Atom" width="250"></a>
   
-## Product by **[Team #4](https://github.com/orgs/Team4-Boolean/teams/team4)**
+## Made by **[Team #4](https://github.com/orgs/Team4-Boolean/teams/team4)** with love
 
 L'intero sitò è stato progettato dai seguenti componenti, visonabili anche tramite profilo GitHub
 
