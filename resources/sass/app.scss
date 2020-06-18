@@ -6,3 +6,15 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+/* COMMON */
+@import 'partials/_common';
+
+/* HEADER */
+@import 'partials/_header';
+
+/* MAIN */
+@import 'partials/_main';
+
+/* FOOTER */
+@import 'partials/_footer';
