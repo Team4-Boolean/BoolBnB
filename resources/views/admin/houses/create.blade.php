@@ -123,6 +123,7 @@
 
         {{-- PHOTO --}}
         <div class="form-group">
+            <label for="photo">Seleziona un immagine di copertina</label>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo">
               <label class="custom-file-label" for="inputGroupFile01">Browse</label>
@@ -133,7 +134,7 @@
                 </span>
             @enderror
         </div>
-
+        
         {{-- TAGS --}}
         <div class="form-check">
             <label for="services">Services</label>
