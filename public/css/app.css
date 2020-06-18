@@ -10928,3 +10928,233 @@ a.text-dark:focus {
   }
 }
 
+/* MIXIN */
+
+/* RESET */
+
+/* COMMON */
+
+.breadcrumb #mobile-show {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumb #mobile-show {
+    display: block;
+  }
+
+  .breadcrumb #mobile-none {
+    display: none;
+  }
+
+  .table .mobile-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .breadcrumb #mobile-show {
+    display: none;
+  }
+
+  .table .mobile-none {
+    display: none;
+  }
+}
+
+/* HEADER */
+
+/* MAIN */
+
+.container-messages-index {
+  width: 40%;
+  height: 550px;
+  float: left;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+
+.container-messages-index .table td:first-child:hover {
+  background-color: #b3ffb3;
+  cursor: pointer;
+}
+
+.container-messages-show {
+  width: 60%;
+  height: 550px;
+  float: right;
+  border: 1px solid black;
+  border-left: hidden;
+}
+
+.container-messages-show .container-messages-top {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.8px solid black;
+}
+
+.container-messages-show .container-messages-top .messages-top-img {
+  border-radius: 50%;
+}
+
+.container-messages-show .container-messages-top .messages-top-img img {
+  height: 50px;
+}
+
+.container-messages-show .container-messages-top .messages-top-id {
+  padding-right: 10px;
+}
+
+.container-messages-show .container-messages-body {
+  height: 80%;
+}
+
+.container-messages-show .container-messages-body .body-left-messages {
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.container-messages-show .container-messages-body .body-left-messages .container-left-messages {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.container-messages-show .container-messages-body .body-right-messages {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.container-messages-show .container-messages-body .body-right-messages .container-right-messages {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.container-messages-show .container-messages-bottom {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.8px solid black;
+}
+
+.container-messages-show .container-messages-bottom .messages-risp {
+  width: 500px;
+  border-radius: 5px;
+}
+
+.container-messages-show .container-messages-bottom .button {
+  margin-left: 20px;
+  font-size: 40px;
+}
+
+.container-messages-show .container-messages-bottom .button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .container-messages-index {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-messages-show {
+    width: 100%;
+    height: 500px;
+    overflow-y: auto;
+    border-left: 1px solid black;
+    display: none;
+  }
+
+  .container-messages-show .container-messages-top {
+    height: 10%;
+    border-bottom: 0.8px solid black;
+  }
+
+  .container-messages-show .container-messages-top .messages-top-img img {
+    height: 40px;
+  }
+
+  .container-messages-show .container-messages-top .messages-top-id {
+    padding-right: 5px;
+  }
+
+  .container-messages-show .container-messages-body .body-left-messages {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .container-messages-show .container-messages-body .body-left-messages .container-left-messages {
+    width: 50%;
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+  .container-messages-show .container-messages-body .body-right-messages {
+    width: 100%;
+    padding-right: 0px;
+  }
+
+  .container-messages-show .container-messages-body .body-right-messages .container-right-messages {
+    width: 50%;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+  .container-messages-show .container-messages-bottom .messages-risp {
+    width: 200px;
+  }
+
+  .container-messages-show .container-messages-bottom .button {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .container-messages-index {
+    width: 50%;
+    height: 550px;
+    border: 1px solid black;
+  }
+
+  .container-messages-show {
+    width: 50%;
+    font-size: 20px;
+  }
+
+  .container-messages-show .container-messages-body {
+    height: 80%;
+  }
+
+  .container-messages-show .container-messages-body .body-left-messages .container-left-messages {
+    width: 50%;
+  }
+
+  .container-messages-show .container-messages-body .body-right-messages .container-right-messages {
+    width: 50%;
+  }
+
+  .container-messages-show .container-messages-bottom .messages-risp {
+    width: 250px;
+  }
+
+  .container-messages-show .container-messages-bottom .button {
+    margin-left: 10px;
+    font-size: 35px;
+  }
+}
+
+/* FOOTER */
+

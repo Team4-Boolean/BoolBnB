@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+/* MIXIN */
+@import '_mixin';
+/* RESET */
+@import '_reset';
+/* COMMON */
+@import '_common';
+/* HEADER */
+@import 'partials/_header';
+/* MAIN */
+@import 'partials/_main';
+/* FOOTER */
+@import 'partials/_footer';

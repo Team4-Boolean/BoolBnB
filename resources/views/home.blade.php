@@ -19,5 +19,11 @@
             </div>
         </div>
     </div>
+    <div class="create">
+        <h1>Inserisci il tuo primo annuncio</h1>
+            <a class="btn btn-primary" href="{{route('admin.houses.create')}}">Crea</a>
+        <h1>O cerca la tua casa </h1>
+            <a class="btn btn-primary" href="{{route('houses.index')}}">Crea</a>
+    </div>
 </div>
 @endsection
