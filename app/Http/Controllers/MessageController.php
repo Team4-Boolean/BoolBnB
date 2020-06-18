@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 
+use App\Mail\SendNewMail;
+use App\Message;
 use App\House;
-use App\Promotion;
+use App\User;
 
-class HouseController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +24,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::all();
-        // $promotions = Promotion::all();
-        return view('guest.index',compact('houses'));
+        //
     }
 
     /**
@@ -39,7 +45,33 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $validator = Validator::make($data, [
+            'house_id' => 'required',
+            'email' => 'required',
+            'body' => 'required',
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'non salvata')
+            ->withErrors($validator)
+            ->withInput();
+        }
+
+        $message = new Message;
+        $message->fill($data);
+        $saved = $message->save();
+
+        if(!$saved) {
+            abort('404');
+        }
+
+        // INVIO LA MAIL A ME OGNI VOLTA CHE INVIANO UN MESSAGGIO
+        Mail::to('mail@mail.it')->send(new SendNewMail($message));
+        return redirect()->back()->with('status', 'messaggio inviato correttamente');
+
     }
 
     /**
@@ -50,9 +82,7 @@ class HouseController extends Controller
      */
     public function show($id)
     {
-        $house = House::findOrFail($id);
-
-        return view('guest.show', compact('house'));
+        //
     }
 
     /**

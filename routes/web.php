@@ -33,3 +33,6 @@ Route::prefix('admin')
 });
 
 Route::resource('houses', 'HouseController');
+
+//Save message
+Route::post('messages', 'MessageController@store')->name('save_message');
