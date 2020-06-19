@@ -204,6 +204,7 @@ class HouseController extends Controller
         // Utilizzato per la manytomany
         // $house->photos()->detach();
 
+        $house->messages()->delete();
         $deleted = $house->delete();
 
         return redirect()->back()->with('status', 'Annuncio cancellato con successo');
