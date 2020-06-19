@@ -15,6 +15,7 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('house_id')->constrained();
             $table->string('name', 80);
             $table->string('description', 150);
             $table->string('path');

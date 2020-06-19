@@ -201,7 +201,8 @@ class HouseController extends Controller
         $house = House::findOrFail($id);
 
         $house->services()->detach();
-        $house->photos()->detach();
+        // Utilizzato per la manytomany
+        // $house->photos()->detach();
 
         $deleted = $house->delete();
 

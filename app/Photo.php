@@ -7,15 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     protected $fillable = [
+        'house_id',
         'name',
         'description',
         'path'
     ];
 
 // MANY TO MANY CON HOUSE
-    public function houses()
+    public function house()
     {
-        return $this->belongsToMany('App\House');
+        return $this->belongsTo('App\House');
     }
 
 }
