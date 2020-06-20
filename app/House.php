@@ -42,7 +42,7 @@ class House extends Model
 // PHOTO
     public function photos()
     {
-        return $this->belongsToMany('App\Photo');
+        return $this->hasMany('App\Photo');
     }
 
 // PROMOTION

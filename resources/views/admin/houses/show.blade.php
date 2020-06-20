@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
     <h1>{{$house->title}}</h1>
     <h3>{{$house->description}}</h3>
