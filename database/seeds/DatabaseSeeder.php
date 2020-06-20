@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
         // PRIMO DB:SEED
         $this->call(PromotionsTableSeeder::class);
         $this->call(ServicesTableSeeder::class);
-        $this->call(PhotosTableSeeder::class);
 
         // SECONDO DB:SEED
         $this->call(UsersTableSeeder::class);
@@ -24,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         // QUARTO DB:SEED
         $this->call(MessagesTableSeeder::class);
+        $this->call(PhotosTableSeeder::class);
 
     }
 }

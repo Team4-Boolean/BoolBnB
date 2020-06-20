@@ -1,24 +1,17 @@
-// Body
-$body-bg: #f8fafc;
-
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
-
-$colorHeader: #ffffff;
-$colorFooter: #f7f7f7;
-$colorScritte: black;
-$colorLink: lightblue;
+@import 'messages/_variables';
+//Import  Guest Index
+@import 'guest_index/partials/_variables';
+//Import  Guest Show
+@import 'guest_show/partials/_variables';
+//Import  Admin Houses Index
+@import 'admin_houses_index/partials/_variables';
+//Import  Admin Houses Show
+@import 'admin_houses_show/partials/_variables';
+//Import  Admin Houses Create
+@import 'admin_houses_create/partials/_variables';
+//Import  Admin Houses Edit
+@import 'admin_houses_edit/partials/_variables';
+//Import  Auth Login
+@import 'auth_login/partials/_variables';
+//Import  Auth Register
+@import 'auth_register/partials/_variables';

@@ -26,7 +26,7 @@
                     <tr>
                         {{-- POSSO VEDERE SOLO GLI ANNUNCI PUBBLICATI DA ME --}}
                         @if(Auth::id() == $house->user_id)
-                        <td>{{$house->id}}</td>
+                        <td>#{{$house->id}}</td>
                         <td>{{$house->title}}</td>
                         <td><a class="btn btn-primary" href="{{route('admin.houses.show', $house->id)}}">Visualizza</a></td>
                         <td><a class="btn btn-secondary" href="{{route('admin.houses.edit', $house->id)}}">Modifica</a></td>
