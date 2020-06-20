@@ -37335,26 +37335,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/inserireNomeView/app.scss":
+/*!**************************************************!*\
+  !*** ./resources/sass/inserireNomeView/app.scss ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n   ╷\n13 │ @import 'layout/_reset';\n   │         ^^^^^^^^^^^^^^^\n   ╵\n  /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/sass/inserireNomeView/app.scss 13:9  root stylesheet\n    at /mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/webpack/lib/NormalModule.js:316:20\n    at /mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass-loader/dist/index.js:73:7\n    at Function.call$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:88459:16)\n    at _render_closure1.call$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:77851:12)\n    at _RootZone.runBinary$3$3 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:26320:18)\n    at _RootZone.runBinary$3 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:26324:19)\n    at _FutureListener.handleError$1 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24768:19)\n    at _Future__propagateToListeners_handleError.call$0 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:25065:40)\n    at Object._Future__propagateToListeners (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4311:88)\n    at _Future._completeError$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24893:9)\n    at _AsyncAwaitCompleter.completeError$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24285:12)\n    at Object._asyncRethrow (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4065:17)\n    at /mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:14183:20\n    at _wrapJsFunctionForAsync_closure.$protected (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4090:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24306:12)\n    at _awaitOnObject_closure0.call$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24298:25)\n    at _RootZone.runBinary$3$3 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:26320:18)\n    at _RootZone.runBinary$3 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:26324:19)\n    at _FutureListener.handleError$1 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24768:19)\n    at _Future__propagateToListeners_handleError.call$0 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:25065:40)\n    at Object._Future__propagateToListeners (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4311:88)\n    at _Future._completeError$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24893:9)\n    at _AsyncAwaitCompleter.completeError$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24285:12)\n    at Object._asyncRethrow (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4065:17)\n    at /mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:16818:20\n    at _wrapJsFunctionForAsync_closure.$protected (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4090:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24306:12)\n    at _awaitOnObject_closure0.call$2 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24298:25)\n    at _RootZone.runBinary$3$3 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:26320:18)\n    at _RootZone.runBinary$3 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:26324:19)\n    at _FutureListener.handleError$1 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:24768:19)\n    at _Future__propagateToListeners_handleError.call$0 (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:25065:40)\n    at Object._Future__propagateToListeners (/mnt/c/MAMP/htdocs/Boolean/BoolBnB/node_modules/sass/sass.dart.js:4311:88)");
 
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!******************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/inserireNomeView/app.scss ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/Boolean/Esercizi php/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/Boolean/Esercizi php/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/sass/inserireNomeView/app.scss */"./resources/sass/inserireNomeView/app.scss");
 
 
 /***/ })

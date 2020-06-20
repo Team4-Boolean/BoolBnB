@@ -1,21 +1,21 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'inserireNomeView/_variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-/* MIXIN */
-@import 'inserireNomeView/_mixin';
-/* RESET */
-@import 'inserireNomeView/_reset';
+// // Variables
+// @import 'inserireNomeView/_variables';
+//
+// // Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+//
+// /* MIXIN */
+// @import 'inserireNomeView/_mixin';
+// /* RESET */
+@import 'layout/_reset';
 /* COMMON */
-@import 'inserireNomeView/_common';
+// @import 'inserireNomeView/_common';
 /* HEADER */
-@import 'inserireNomeView/partials/_header';
+@import 'layout/partials/_header';
 /* MAIN */
-@import 'inserireNomeView/partials/_main';
+// @import 'inserireNomeView/partials/_main';
 /* FOOTER */
-@import 'inserireNomeView/partials/_footer';
+@import 'layout/partials/_footer';
