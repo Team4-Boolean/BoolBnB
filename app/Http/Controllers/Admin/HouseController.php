@@ -39,8 +39,10 @@ class HouseController extends Controller
     public function create()
     {
         $services = Service::all();
+        $photos = Photo::all();
 
-        return view('admin.houses.create', compact('services'));
+
+        return view('admin.houses.create', compact('services', 'photos'));
     }
 
     /**
@@ -75,7 +77,9 @@ class HouseController extends Controller
             'mq' => 'required',
             'address' => 'required',
             'services' => 'required|array',
-            'services.*' => 'exists:services,id'
+            'services.*' => 'exists:services,id',
+            'photos' => 'required|array',
+            'photos.*' => 'exists:photos,id'
         ]);
 
 
@@ -98,8 +102,12 @@ class HouseController extends Controller
             $house->services()->attach($data['services']);
         }
 
+        if(isset($data['photos'])) {
+            $house->photos()->attach($data['photos']);
+        }
 
-        return redirect()->route('admin.houses.index')->with('status', 'Annuncio pubblicato con successo');
+
+        return redirect()->route('admin.photos.create')->with('status', 'Annuncio pubblicato con successo, Completa il tuo annuncio inserendo le foto appartamento');
     }
 
     /**

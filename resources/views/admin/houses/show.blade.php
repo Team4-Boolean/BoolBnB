@@ -7,6 +7,10 @@
             <p>{{$service->name}}</p>
         @endforeach
 
+        @foreach ($house->photos as $photo)
+            <img src="{{asset('storage/' . $photo->path)}}" alt="">
+        @endforeach
+
     {{-- VISUALIZZO QUANTI MESSAGGI IN TOTALE MI SONO ARRIVATI PER QUESTA CASA (Da admin) --}}
     <div class="row">
         <div class="col-12">
