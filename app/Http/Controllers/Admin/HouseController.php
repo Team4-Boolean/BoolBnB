@@ -65,7 +65,10 @@ class HouseController extends Controller
         } else {
             $data['visible'] = 1;
         }
-
+        if (isset($data['photo'])) {
+            $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
+            $data['photo'] = $imgcopertina;
+        }
         $data['user_id'] = Auth::id();
         $validator = Validator::make($data, [
             'title' => 'required|string',
@@ -74,7 +77,7 @@ class HouseController extends Controller
             'longitude' => 'required',
             'rooms' => 'required',
             'beds' => 'required',
-            // 'photo' => 'required|string',
+            'photo' => 'required',
             'bathrooms' => 'required',
             'mq' => 'required',
             'address' => 'required',
@@ -82,9 +85,7 @@ class HouseController extends Controller
             'services.*' => 'exists:services,id'
         ]);
 
-        if (isset($data['photo'])) {
-            Storage::disk('public')->put('images', $data['photo']);
-        }
+
 
         if ($validator->fails()) {
             return redirect()->back()->with('status', 'Campo mancante')
@@ -155,7 +156,11 @@ class HouseController extends Controller
         } else {
             $data['visible'] = 1;
         }
-
+        if (isset($data['photo'])) {
+            Storage::disk('public')->delete($data['photo']);
+            $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
+            $data['photo'] = $imgcopertina;
+        }
         $data['user_id'] = Auth::id();
         $validator = Validator::make($data, [
             'title' => 'required|string',
@@ -164,7 +169,7 @@ class HouseController extends Controller
             'longitude' => 'required',
             'rooms' => 'required',
             'beds' => 'required',
-            // 'photo' => 'required|string',
+            'photo' => 'required',
             'bathrooms' => 'required',
             'mq' => 'required',
             'address' => 'required',
@@ -172,9 +177,7 @@ class HouseController extends Controller
             'services.*' => 'exists:services,id'
         ]);
 
-        if (isset($data['photo'])) {
-            Storage::disk('public')->put('images', $data['photo']);
-        }
+
 
         if ($validator->fails()) {
             return redirect()->back()->with('status', 'Campo mancante')
@@ -205,8 +208,10 @@ class HouseController extends Controller
         $house = House::findOrFail($id);
 
         $house->services()->detach();
-        $house->photos()->detach();
+        // Utilizzato per la manytomany
+        // $house->photos()->detach();
 
+        $house->messages()->delete();
         $deleted = $house->delete();
 
         return redirect()->back()->with('status', 'Annuncio cancellato con successo');

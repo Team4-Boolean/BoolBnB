@@ -1,16 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
-    {{-- <div class="row">
-        <div class="offset-8 col-3">
-            <h3> <a href="{{route('download')}}"> Download this file </a> </h3>
-        </div>
-    </div> --}}
+
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-             <li class="breadcrumb-item active" aria-current="page">Pages</li>
-		 </ol>
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+                <li class="breadcrumb-item active" aria-current="page">Pages</li>
+		    </ol>
         </nav>
 
         {{-- TUTTI POSSONO VEDERE LE CASE --}}

@@ -38,9 +38,6 @@ class HousesTableSeeder extends Seeder
             $promotions = Promotion::inRandomOrder()->limit(3)->get();
             $house->promotions()->attach($promotions);
 
-            $photos = Photo::inRandomOrder()->get();
-            $house->photos()->attach($photos);
-
             $services = Service::inRandomOrder()->get();
             $house->services()->attach($services);
 

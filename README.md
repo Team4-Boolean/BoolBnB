@@ -1,79 +1,61 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://www.boolean.careers/images/common/logo.png" width="400"></p>
+
+## About BoolBnB
+
+BoolBnB è una applicazione per trovare e gestire l'affitto di appartamenti.
+Attraverso BoolBnB i proprietari di apparatamenti possono inserire le informazioni degli appartamenti che vogliono affittare per care utenti interessati.
+
+## BoolBnB Features
+
+- Permettere ai proprietari di appartamento di registrarsi alla piattaforma.
+- Permettere ai proprietari di appartamento registrati di aggiungere una appartamento alla piattaforma.
+- Permette ai visitatori di ricercare un appartamento.
+- Permettere ai visitatori di vedere i dettagli di un appartamento.
+- Permettere ai visitatori di scrivere al proprietario di un appartamento per chiedere informazioni	.
+- Permettere ai proprietari di appartamento registrati di vedere le richieste ricevute.
+- Permettere ai proprietari di appartamento registrati di vedere statistiche riguardo gli annunci dei propri appartamenti.
+- Permettere ai proprietari di appartamento registrati di sponsorizzare il propria appartamento	
+
+Su BoolBnB troverà l'appartamento adatto ad ogni tua esigenza.
+
+## BoolBnB Project
+
+Per progettare il tutto, il team si è avvalso dell'utilizzo di piattaforme come 
+
+<h4 align="center"> GitHub Teams </h4>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<a href="https://github.com/team#organizations"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="GitHub" width="170"></a>
 
-## About Laravel
+<p align="center"> Discord </p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+<a href="https://discord.com"><img src="https://discord.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" alt="Discord" width="170"></a>
+  
+<p align="center"> Laravel </p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="350"></p>
+  
+<h4 align="center"> Atom </h4>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<p align="center">
+<a href="https://atom.io"><img src="https://aws1.discourse-cdn.com/business6/uploads/github_atom/original/3X/9/1/91cdcb0091c80a4ad6d74746fa4aec054f2278bc.png" alt="Atom" width="250"></a>
+  
+## Made by **[Team #4](https://github.com/orgs/Team4-Boolean/teams/team4)** with love
 
-## Learning Laravel
+L'intero sitò è stato progettato dai seguenti componenti, visonabili anche tramite profilo GitHub
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **[Fabio](https://github.com/fabiofanta)**
+- **[Antonio](https://github.com/AntonioMeloni)**
+- **[Nicolò](https://github.com/niccolopredazzer)**
+- **[Luca](https://github.com/Ljnce)**
+- **[Giovanni](https://github.com/GiovanniDiana511)**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
 
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+BoolBnB è una licenza del Team #4

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
     <div class="container">
         <div class="row">
@@ -6,7 +6,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item " aria-current="page"><a href="{{route('houses.index')}}">Pages</a></li>
+                        <li class="breadcrumb-item " aria-current="page"><a href="{{route('houses.index')}}">Messages</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{$house->summary}}</li>
                     </ol>
                 </nav>
@@ -37,8 +37,8 @@
         <div class="form-group">
             <input type="hidden"  class="form-control" name="house_id" id="house_id" placeholder="Enter Title" value="{{$house->id}}">
         </div>
-        {{-- EMAIL --}}
 
+        {{-- EMAIL --}}
         <div class="form-group">
             <label for="email">email</label>
             <input type="text"  class="form-control" name="email" placeholder="Enter email" id="email" value="@if (!empty(old('email'))) {{old('email')}} @elseif (Auth::check()) {{Auth::user()->email}} @endif">

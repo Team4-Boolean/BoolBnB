@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
@@ -125,7 +125,9 @@
         <div class="form-group">
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo">
-              <label class="custom-file-label" for="inputGroupFile01">Browse</label>
+              <label class="custom-file-label" for="inputGroupFile01">Browse
+              </label>
+
             </div>
             @error('photo')
                 <span class='alert alert-danger'>
@@ -133,7 +135,7 @@
                 </span>
             @enderror
         </div>
-
+         <img src="{{asset('storage/' .$house->photo)}}" alt="">
         {{-- TAGS --}}
         <div class="form-check">
             <label for="services">Services</label>

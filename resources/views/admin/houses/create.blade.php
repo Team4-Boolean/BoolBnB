@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
@@ -123,6 +123,7 @@
 
         {{-- PHOTO --}}
         <div class="form-group">
+            <label for="photo">Seleziona un immagine di copertina</label>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo">
               <label class="custom-file-label" for="inputGroupFile01">Browse</label>
