@@ -39,8 +39,12 @@ class HouseController extends Controller
     public function create()
     {
         $services = Service::all();
+        $houseIds = House::where('user_id', '=', Auth::id())->select('id')->get();
+        $test = $houseIds->toArray();
+        // dd($test[]);
+        $photos = Photo::where('house_id', '=', $test)->get();
 
-        return view('admin.houses.create', compact('services'));
+        return view('admin.houses.create', compact('services','photos'));
     }
 
     /**
@@ -62,6 +66,7 @@ class HouseController extends Controller
             $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
             $data['photo'] = $imgcopertina;
         }
+
         $data['user_id'] = Auth::id();
         $validator = Validator::make($data, [
             'title' => 'required|string',
@@ -94,10 +99,20 @@ class HouseController extends Controller
             abort('404');
         }
 
+        $photo = new Photo;
+        $dataPhoto = [
+            'house_id' => $house->id,
+            'name' => 'Photo_1',
+            'description' => 'test',
+            'path' => $data['photo']
+        ];
+
+        $photo->fill($dataPhoto);
+        $savedTest = $photo->save();
+
         if(isset($data['services'])) {
             $house->services()->attach($data['services']);
         }
-
 
         return redirect()->route('admin.houses.index')->with('status', 'Annuncio pubblicato con successo');
     }
@@ -205,6 +220,8 @@ class HouseController extends Controller
         // $house->photos()->detach();
 
         $house->messages()->delete();
+        $house->photos()->delete();
+
         $deleted = $house->delete();
 
         return redirect()->back()->with('status', 'Annuncio cancellato con successo');

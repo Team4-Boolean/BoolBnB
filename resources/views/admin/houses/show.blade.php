@@ -1,16 +1,50 @@
 @extends('layouts.layout')
 @section('content')
-    <h1>{{$house->title}}</h1>
-    <h3>{{$house->description}}</h3>
-    <img src="{{asset('storage/' . $house->photo)}}" alt="">
-        @foreach ($house->services as $service)
-            <p>{{$service->name}}</p>
-        @endforeach
-
-    {{-- VISUALIZZO QUANTI MESSAGGI IN TOTALE MI SONO ARRIVATI PER QUESTA CASA (Da admin) --}}
-    <div class="row">
-        <div class="col-12">
-            <h2 style= color:red >Ha ricevuto {{$message}} messaggi per questa casa</h2>
+    <div class="container-adminHousesShow">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="10000">
+                <img src="{{asset('storage/' . $house->photo)}}" alt="">
+            </div>
+            {{-- <div class="carousel-item" data-interval="2000">
+              <img src="..." class="d-block w-100" alt="...">
+            </div> --}}
+          </div>
+        </div>
+        <div class="card-ahs">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-body-ahs">
+                      <h3 class="card-title-ahs">{{$house->title}}</h3>
+                      <p class="card-text-ahs">{{$house->description}}</p>
+                    </div>
+                    <div class="card-data-ahs">
+                        <ul class="list-group">
+                          <li class="list-group-item list-group-item-ahs">Indirizzo: {{$house->address}}</li>
+                          <li class="list-group-item list-group-item-ahs">Stanze: {{$house->rooms}}</li>
+                          <li class="list-group-item list-group-item-ahs">Letti: {{$house->beds}}</li>
+                          <li class="list-group-item list-group-item-ahs">Bagni: {{$house->bathrooms}}</li>
+                        </ul>
+                        <div class="badges-ahs">
+                            @foreach ($house->services as $key => $service)
+                                <span class="badge">{{$service->name}}</span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <a href="{{route('admin.houses.edit', $house->id)}}" class="list-group-item">
+                          Modifica appartamento
+                        </a>
+                        <a href="#" class="list-group-item ">Statistiche</a>
+                        <a href="#" class="list-group-item ">Attiva una promozione</a>
+                        <a href="#" class="list-group-item ">Modifica Foto</a>
+                        <a href="{{route('admin.messages.index', $house->id)}}" class="list-group-item d-flex justify-content-between align-items-center">
+                            Messaggi ricevuti
+                            <span class="badge badge-primary badge-pill">{{$message}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

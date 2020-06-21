@@ -122,6 +122,9 @@
         </div>
 
         {{-- PHOTO --}}
+        @foreach ($photos as $key => $photo)
+            <img src="{{asset('storage/' .$photo->path)}}" alt="">
+        @endforeach
         <div class="form-group">
             <label for="photo">Seleziona un immagine di copertina</label>
             <div class="custom-file">

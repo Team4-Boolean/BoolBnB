@@ -2,20 +2,20 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // // Variables
-// @import 'inserireNomeView/_variables';
+@import 'adminHousesShow/_variables';
 //
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 //
-// /* MIXIN */
-// @import 'inserireNomeView/_mixin';
+/* MIXIN */
+@import 'adminHousesShow/_mixin';
 // /* RESET */
 @import 'layout/_reset';
 /* COMMON */
-// @import 'inserireNomeView/_common';
+@import 'adminHousesShow/_common';
 /* HEADER */
 @import 'layout/partials/_header';
 /* MAIN */
-// @import 'inserireNomeView/partials/_main';
+@import 'adminHousesShow/partials/_main';
 /* FOOTER */
 @import 'layout/partials/_footer';

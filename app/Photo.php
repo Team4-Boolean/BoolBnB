@@ -13,7 +13,7 @@ class Photo extends Model
         'path'
     ];
 
-// MANY TO MANY CON HOUSE
+// ONE TO MANY CON HOUSE
     public function house()
     {
         return $this->belongsTo('App\House');
