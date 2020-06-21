@@ -50,12 +50,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => 'required',
+            'name' => ['required', 'string', 'max:100'],
+            'surname' => ['required', 'string', 'max:100'],
             'date_of_birth' => 'required',
-            'mobile_number' => 'required',
+            'mobile_number' => ['required', 'max:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],
+        [
+            'mobile_number.max'=> 'Il numero di cellulare non può essere superiore a 10 caratteri', // Messaggio personalizzato
+            'password.min'=> 'Inserisci una password di almeno otto caratteri', // Messaggio personalizzato
+            'email.unique'=> 'Questa e-mail è già in uso', // Messaggio personalizzato
         ]);
     }
 

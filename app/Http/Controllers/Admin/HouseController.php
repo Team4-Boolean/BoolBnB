@@ -25,15 +25,12 @@ class HouseController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         $houses = House::all();
         $promotions = Promotion::all();
         //dd($promotions);
 
-=======
         $houses = House::where('user_id', '=', Auth::id())->get();
         // \Auth::user()
->>>>>>> e58b1dc73b4c5143e6c17444c2154965cebdaccd
 
         return view('admin.houses.index',compact('houses'));
     }
