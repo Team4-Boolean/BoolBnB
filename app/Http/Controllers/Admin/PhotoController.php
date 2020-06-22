@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 use App\Photo;
+use App\House;
+use App\User;
 
 class PhotoController extends Controller
 {
@@ -30,7 +32,8 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        return view('admin.photos.create');
+        $houses = House::where('user_id', Auth::id())->get();
+        return view('admin.photos.create', compact('houses'));
     }
 
     /**
@@ -42,9 +45,8 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $imgpath = Storage::disk('public')->put('images', $data['path']);
-        $data['path'] = $imgpath;
         $validator = Validator::make($data, [
+            'house_id' => 'required',
             'name' => 'required|string',
             'description' => 'required',
             'path' => 'required'
@@ -55,7 +57,8 @@ class PhotoController extends Controller
             ->withErrors($validator)
                 ->withInput();
         }
-
+        $path = Storage::disk('public')->put('images', $data['path']);
+        $data['path'] = $path;
         $photo = new Photo;
         $photo->fill($data);
         $saved = $photo->save();
@@ -64,7 +67,7 @@ class PhotoController extends Controller
             abort('404');
         }
 
-        return redirect()->route('admin.houses.index')->with('status', 'Foto pubblicato con successo');
+        return redirect()->route('admin.houses.index')->with('status', 'Foto pubblicata con successo');
 
     }
 

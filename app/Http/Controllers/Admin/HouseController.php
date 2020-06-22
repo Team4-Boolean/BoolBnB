@@ -39,10 +39,10 @@ class HouseController extends Controller
     public function create()
     {
         $services = Service::all();
-        $photos = Photo::all();
+        // $photos = Photo::all();
 
 
-        return view('admin.houses.create', compact('services', 'photos'));
+        return view('admin.houses.create', compact('services'));
     }
 
     /**
@@ -60,10 +60,7 @@ class HouseController extends Controller
         } else {
             $data['visible'] = 1;
         }
-        if (isset($data['photo'])) {
-            $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
-            $data['photo'] = $imgcopertina;
-        }
+
         $data['user_id'] = Auth::id();
         $validator = Validator::make($data, [
             'title' => 'required|string',
@@ -77,9 +74,7 @@ class HouseController extends Controller
             'mq' => 'required',
             'address' => 'required',
             'services' => 'required|array',
-            'services.*' => 'exists:services,id',
-            'photos' => 'required|array',
-            'photos.*' => 'exists:photos,id'
+            'services.*' => 'exists:services,id'
         ]);
 
 
@@ -88,6 +83,10 @@ class HouseController extends Controller
             return redirect()->back()->with('status', 'Campo mancante')
             ->withErrors($validator)
                 ->withInput();
+        }
+        if (isset($data['photo'])) {
+            $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
+            $data['photo'] = $imgcopertina;
         }
 
         $house = new House;
@@ -100,10 +99,6 @@ class HouseController extends Controller
 
         if(isset($data['services'])) {
             $house->services()->attach($data['services']);
-        }
-
-        if(isset($data['photos'])) {
-            $house->photos()->attach($data['photos']);
         }
 
 
@@ -157,11 +152,9 @@ class HouseController extends Controller
         } else {
             $data['visible'] = 1;
         }
-        if (isset($data['photo'])) {
-            Storage::disk('public')->delete($data['photo']);
-            $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
-            $data['photo'] = $imgcopertina;
-        }
+
+
+
         $data['user_id'] = Auth::id();
         $validator = Validator::make($data, [
             'title' => 'required|string',
@@ -178,6 +171,12 @@ class HouseController extends Controller
             'services.*' => 'exists:services,id'
         ]);
 
+        if (isset($data['photo'])) {
+            Storage::disk('public')->delete($data['photo']);
+
+        }
+        $imgcopertina = Storage::disk('public')->put('images', $data['photo']);
+        $data['photo'] = $imgcopertina;
 
 
         if ($validator->fails()) {

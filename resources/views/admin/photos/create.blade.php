@@ -17,6 +17,22 @@
         <form action="{{route('admin.photos.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
+            <div class="form-group">
+                  <label for="house">Seleziona la casa a cui vuoi aggiungere la foto</label>
+                  <select name="house_id" id="house_id" class="custom-select">
+                    @foreach ($houses as $house)
+                      <option value="{{$house['id']}}">{{$house['title']}}</option>
+                    @endforeach
+
+                    {{-- <option value="2">Lorem</option>
+                    <option value="3">Ipsum</option>
+                    <option value="4">Dolor</option>
+                    <option value="5">Sit</option> --}}
+                  </select>
+                  @error('house')
+                    <small class="form-text">Errore</small>
+                  @enderror
+                </div>
              <div class="form-group">
                 <label for="name">Title</label>
                 <input type="text" class="form-control" id="name"  placeholder="Inserisci un titolo" name="name">

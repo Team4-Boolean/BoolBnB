@@ -153,7 +153,7 @@
         </div>
 
         {{-- Photos --}}
-        <div class="form-check">
+        {{-- <div class="form-check">
             <label for="photos">Photos</label>
             @foreach ($photos as $photo)
                 @if(Auth::id() == $photo->house->house_id)
@@ -169,7 +169,7 @@
                     {{$message}}
                 </span>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <button type="submit" class="btn btn-dark">Invia</button>
