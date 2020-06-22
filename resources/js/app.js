@@ -63,4 +63,25 @@ $(document).ready(function () {
         $('.container-messages-show').hide();
     });
 
+
+    // Api test
+    var urlBase = '/api/houses';
+    stampa();
+
+    function stampa(){
+        $.ajax({
+            url: '/api/houses',
+            method:'GET',
+            headers: {
+                'Authorization': 'Bearer Pippo89'
+            },
+            success:function(data){
+                console.log(data);
+            },
+            error: function(){
+            // alert('errore');
+            }
+        });
+    };
+
 });

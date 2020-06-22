@@ -37285,7 +37285,27 @@ $(document).ready(function () {
   $('#mobile-show').click(function () {
     $('.container-messages-index').show();
     $('.container-messages-show').hide();
-  });
+  }); // Api test
+
+  var urlBase = '/api/houses';
+  stampa();
+
+  function stampa() {
+    $.ajax({
+      url: '/api/houses',
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer Pippo89'
+      },
+      success: function success(data) {
+        console.log(data);
+      },
+      error: function error() {// alert('errore');
+      }
+    });
+  }
+
+  ;
 });
 
 /***/ }),
