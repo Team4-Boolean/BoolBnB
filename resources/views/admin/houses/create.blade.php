@@ -25,7 +25,7 @@
         {{-- TITLE --}}
         <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" >{{old('title')}}</input>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" value="{{old('title')}}"></input>
             @error('title')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -134,7 +134,7 @@
                 </span>
             @enderror
         </div>
-        
+
         {{-- TAGS --}}
         <div class="form-check">
             <label for="services">Services</label>

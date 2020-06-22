@@ -52,7 +52,7 @@
         </div>
         <div class="container-messages-body">
             <div class="body-left-messages">
-                <div class="container-left-messages">
+                <div class="container-left-messages" data-aos="zoom-in-down" data-aos-duration="1900">
 
                 </div>
             </div>
@@ -69,4 +69,8 @@
         </div>
     </div>
     </div>
+    
+    <script>
+      AOS.init();
+    </script>
 @endsection

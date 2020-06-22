@@ -107,7 +107,7 @@ class MessageController extends Controller
     {
         $message = Message::findOrFail($id);
 
-        // CONTROLLO AGGIUNTIVO PER CANCELLAZIONE MESSAGGIO IN BASE ALL'ID DELL'UTENTE CHE HA INSERITO IL MESSAGGIO
+        // Controllo aggiuntivo per cancellazione messaggio
         $user = Auth::id();
         $my = $message->house->user_id;
         if ($user != $my) {

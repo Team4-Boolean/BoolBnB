@@ -37236,8 +37236,8 @@ $(document).ready(function () {
     $('.view-message').click(function () {
       // Azzero la schermata del messaggio ricevuto, ad ogni cambio messaggio
       $('.messages-top-id').empty();
-      $('.container-left-messages').empty();
-      $('.container-right-messages').empty(); // Trovo il mio id relativo al messaggio tramite il "data" dal mio file blade
+      $('.container-left-messages').empty().css("background-color", "rgba(0,0,0,0)");
+      $('.container-right-messages').empty().css("background-color", "rgba(0,0,0,0)"); // Trovo il mio id relativo al messaggio tramite il "data" dal mio file blade
 
       var bladeMessageId = $(this).data('id'); // Ciclo i miei messaggi
 

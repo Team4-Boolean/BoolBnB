@@ -25,6 +25,7 @@
               {!! $house->description !!}
              </div>
         </div>
+        <img src="{{asset('storage/' . $house->photo)}}" alt="">
 
         {{-- CREO IL MESSAGGIO DA INVIARE A CHI HA FATTO LA CASA --}}
 

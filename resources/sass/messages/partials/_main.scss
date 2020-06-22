@@ -1,0 +1,195 @@
+// Admin messages index
+.container-messages-index {
+    width: 40%;
+    height: 550px;
+    float: left;
+    overflow-y: auto;
+    border: 1px solid black;
+    background-color: #f7f7f7;
+    .table {
+        td {
+            &:first-child {
+                &:hover {
+                    background-color: #b3ffb3;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Admin messages show
+.container-messages-show {
+    width: 60%;
+    height: 550px;
+    float: right;
+    border: 1px solid black;
+    border-left: hidden;
+    .container-messages-top {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.8px solid black;
+        background-color: #f7f7f7;
+        .messages-top-img {
+            img {
+                height: 50px;
+                border-radius: 50%;
+            }
+        }
+        .messages-top-id {
+            padding-right: 10px;
+        }
+    }
+    .container-messages-body {
+        height: 80%;
+        background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://i1.wp.com/www.easyinterrail.com/wp-content/uploads/2017/03/airbnb-logo.png?w=1253&ssl=1');
+        background-position: center;
+        background-size: contain;
+        .body-left-messages {
+            width: 100%;
+            padding-left: 20px;
+            padding-top: 20px;
+            .container-left-messages {
+                width: 30%;
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                padding: 30px;
+            }
+        }
+        .body-right-messages {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            .container-right-messages {
+                width: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                border-radius: 20px;
+                padding: 30px;
+            }
+        }
+    }
+    .container-messages-bottom {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 0.8px solid black;
+        background-color: #f7f7f7;
+        .messages-risp {
+            width: 500px;
+            border-radius: 5px;
+        }
+        .button {
+            margin-left: 20px;
+            font-size: 40px;
+            &:hover {
+                cursor: pointer;
+                color: #b3ffb3;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    // Admin messages index
+    .container-messages-index {
+        width: 100%;
+        height: 100%;
+    }
+
+    // Admin messages show
+    .container-messages-show {
+        width: 100%;
+        height: 500px;
+        overflow-y: auto;
+        border-left: 1px solid black;
+        display: none;
+        .container-messages-top {
+            height: 10%;
+            border-bottom: 0.8px solid black;
+            .messages-top-img {
+                img {
+                    height: 40px;
+                }
+            }
+            .messages-top-id {
+                padding-right: 5px;
+            }
+        }
+        .container-messages-body {
+            background-size: cover;
+            .body-left-messages {
+                padding-left: 10px;
+                padding-top: 10px;
+                .container-left-messages {
+                    width: 50%;
+                    border-radius: 20px;
+                    padding: 30px;
+                }
+            }
+            .body-right-messages {
+                width: 100%;
+                padding-right: 0px;
+                .container-right-messages {
+                    width: 50%;
+                    margin-right:10px;
+                    border-radius: 20px;
+                    padding: 30px;
+                }
+            }
+        }
+        .container-messages-bottom {
+            .messages-risp {
+                width: 200px;
+            }
+            .button {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    // Admin messages index
+    .container-messages-index {
+        width: 50%;
+        height: 550px;
+        border: 1px solid black;
+    }
+
+    // Admin messages show
+    .container-messages-show {
+        width: 50%;
+        font-size: 20px;
+        .container-messages-body {
+            height: 80%;
+            background-size: cover;
+            .body-left-messages {
+                .container-left-messages {
+                    width: 50%;
+                }
+            }
+            .body-right-messages {
+                .container-right-messages {
+                    width: 50%;
+                }
+            }
+        }
+        .container-messages-bottom {
+            .messages-risp {
+                width: 250px;
+            }
+            .button {
+                margin-left: 10px;
+                font-size: 35px;
+            }
+        }
+    }
+}

@@ -25,7 +25,7 @@
         {{-- TITLE --}}
         <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" >{{old('title')}}</input>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" value="{{!empty(old('title')) ? (old('title')) : $house->title}}"></input>
             @error('title')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -36,7 +36,7 @@
         {{-- DESCRIPTION --}}
         <div class="form-group">
                 <label for="description">Description</label>
-                <textarea type="text" class="form-control" name="description" id="description" rows="10" placeholder="Enter Description" >{{old('description')}}</textarea>
+                <textarea type="text" class="form-control" name="description" id="description" rows="10" placeholder="Enter Description" >{{!empty(old('description')) ? old('description') : $house->description}}</textarea>
             @error('description')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -47,7 +47,7 @@
         {{-- ROOMS --}}
         <div class="form-group">
                 <label for="rooms">Rooms</label>
-                <input type="text" class="form-control" name="rooms" id="rooms" placeholder="Enter Rooms" value="{{old('rooms')}}"></input>
+                <input type="text" class="form-control" name="rooms" id="rooms" placeholder="Enter Rooms" value="{{!empty(old('rooms')) ? (old('rooms')) : $house->rooms}}"></input>
             @error('rooms')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -58,7 +58,7 @@
         {{-- BATHROOMS --}}
         <div class="form-group">
                 <label for="bathrooms">Bathrooms</label>
-                <input type="text" class="form-control" name="bathrooms" id="bathrooms" placeholder="Enter Bathrooms" value="{{old('bathrooms')}}"></input>
+                <input type="text" class="form-control" name="bathrooms" id="bathrooms" placeholder="Enter Bathrooms" value="{{!empty(old('bathrooms')) ? (old('bathrooms')) : $house->bathrooms}}"></input>
             @error('bathrooms')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -69,7 +69,7 @@
         {{-- BEDS --}}
         <div class="form-group">
                 <label for="beds">Beds</label>
-                <input type="text" class="form-control" name="beds" id="beds" placeholder="Enter Beds" value="{{old('beds')}}"></input>
+                <input type="text" class="form-control" name="beds" id="beds" placeholder="Enter Beds" value="{{!empty(old('beds')) ? (old('beds')) : $house->beds}}"></input>
             @error('beds')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -80,7 +80,7 @@
         {{-- MQ --}}
         <div class="form-group">
                 <label for="mq">MQ</label>
-                <input type="text" class="form-control" name="mq" id="mq" placeholder="Enter Mq" value="{{old('mq')}}"></input>
+                <input type="text" class="form-control" name="mq" id="mq" placeholder="Enter Mq" value="{{!empty(old('mq')) ? (old('mq')) : $house->mq}}"></input>
             @error('mq')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -91,7 +91,7 @@
         {{-- ADDRESS --}}
         <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="{{old('address')}}"></input>
+                <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="{{!empty(old('address')) ? (old('address')) : $house->address}}"></input>
             @error('address')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -102,7 +102,7 @@
         {{-- LONG --}}
         <div class="form-group">
                 <label for="longitude">Longitude</label>
-                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Enter Longitude" value="{{old('longitude')}}"></input>
+                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Enter Longitude" value="{{!empty(old('longitude')) ? (old('longitude')) : $house->longitude}}"></input>
             @error('longitude')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -113,7 +113,7 @@
         {{-- LAT --}}
         <div class="form-group">
                 <label for="latitude">Latitude</label>
-                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Enter Latitude" value="{{old('latitude')}}"></input>
+                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Enter Latitude"  value="{{!empty(old('latitude')) ? (old('latitude')) : $house->latitude}}"></input>
             @error('latitude')
                 <span class='alert alert-danger'>
                     {{$message}}
@@ -121,7 +121,7 @@
             @enderror
         </div>
 
-        {{-- PHOTO --}}
+        {{-- Photo --}}
         <div class="form-group">
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo">
@@ -136,14 +136,14 @@
             @enderror
         </div>
          <img src="{{asset('storage/' .$house->photo)}}" alt="">
-        {{-- TAGS --}}
+        {{-- Services --}}
         <div class="form-check">
             <label for="services">Services</label>
             @foreach ($services as $service)
             <div class="form-check form-check-inline">
                 <label class="form-check-label" for="service{{$service->id}}">{{$service->name}}</label>
                 <input class="form-check-input"  type="checkbox" name="services[]" id="service{{$service->id}}" value="{{$service->id}}"
-                 {{ (is_array(old('services')) && in_array($service->id, old('services'))) ? 'checked' : ''}}>
+                 {{ (is_array(old('services')) && in_array($service->id, old('services'))) || $house->services->contains($service->id) ? 'checked' : ''}}>
             </div>
             @endforeach
             @error('services')
