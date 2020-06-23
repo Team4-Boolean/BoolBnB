@@ -23,11 +23,6 @@
                     @foreach ($houses as $house)
                       <option value="{{$house['id']}}">{{$house['title']}}</option>
                     @endforeach
-
-                    {{-- <option value="2">Lorem</option>
-                    <option value="3">Ipsum</option>
-                    <option value="4">Dolor</option>
-                    <option value="5">Sit</option> --}}
                   </select>
                   @error('house')
                     <small class="form-text">Errore</small>

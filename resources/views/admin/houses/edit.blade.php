@@ -152,7 +152,7 @@
                 </span>
             @enderror
         </div>
-
+        <a href="{{route('admin.photos.index')}}">Gestisci foto appartamento</a>
         <div class="form-group">
             <button type="submit" class="btn btn-dark">Invia</button>
         </div>

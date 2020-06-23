@@ -209,7 +209,8 @@ class HouseController extends Controller
 
         $house->services()->detach();
         // Utilizzato per la manytomany
-        // $house->photos()->detach();
+        Storage::disk('public')->delete($house['photo']);
+        $house->photos()->detach();
 
         $house->messages()->delete();
         $deleted = $house->delete();
