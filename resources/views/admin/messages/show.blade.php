@@ -1,5 +1,5 @@
 {{-- MOSTRA IL TESTO DEI MESSAGGI --}}
-@extends('layouts.layout')
+@extends('layouts.app')
 @section('content')
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
