@@ -10993,9 +10993,19 @@ header nav button:hover {
   margin-bottom: 25px;
 }
 
-.card-container-AuthLoginRegister .btn-login {
+.card-container-AuthLoginRegister .bg-custom {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.card-container-AuthLoginRegister .btn-large {
   width: 40%;
+}
+
+.card-container-AuthLoginRegister .btn-custom {
   font-weight: bold;
+  background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+  color: white;
 }
 
 .card-container-AuthLoginRegister .text-button {
@@ -11004,6 +11014,26 @@ header nav button:hover {
 
 .card-container-AuthLoginRegister .icon-button {
   margin-left: 5px;
+}
+
+.custom-margin {
+  margin-top: 75px;
+}
+
+.custom-margin .custom-nav {
+  font-weight: bold;
+}
+
+.card-container-CreateHouses {
+  margin-bottom: 25px;
+}
+
+.card-container-CreateHouses .card-header-custom {
+  margin-bottom: 10px;
+}
+
+.card-container-CreateHouses .card-custom {
+  padding: 0 10px;
 }
 
 /* FOOTER */
