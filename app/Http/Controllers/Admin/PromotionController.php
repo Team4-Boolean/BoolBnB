@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-use App\Message;
+use App\Promotion;
 use App\House;
-use App\User;
 
-class MessageController extends Controller
+class PromotionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,23 +21,10 @@ class MessageController extends Controller
      */
     public function index()
     {
-
-    // Trovo il collegamento tra creatori delle case e utente loggato
-    $houses = House::where('user_id', Auth::id())->get();
-    // Creo un array per pusshare dentro i miei id
-    $houseId = [];
-
-    foreach ($houses as $house) {
-        $houseId[] = $house['id'];
-     // array_push($houseId, $house['id']);
+        $promotions = Promotion::all();
+        $houses = House::where('user_id', '=', Auth::id())->get();
+        return view('admin.promotions.index', compact('promotions', 'houses'));
     }
-
-    $messages = Message::whereIn('house_id', $houseId)->get();
-
-
-    return view('admin.messages.index', compact('messages'));
-
-}
 
     /**
      * Show the form for creating a new resource.
@@ -58,7 +44,40 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $validator = Validator::make($data, [
+            'promotions' => 'required|array',
+            'promotions.*' => 'exists:promotions,id',
+            'houses' => 'required|array',
+            'houses.*' => 'exists:houses,id'
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'Campo mancante')
+            ->withErrors($validator)
+                ->withInput();
+        }
+
+        $house = new House;
+        $house->fill($data);
+        $saved = $house->save();
+
+        // if(!$saved) {
+        //     abort('404');
+        // }
+
+        if(isset($data['promotions'])) {
+            promotions()->attach($data['promotions']);
+        }
+
+        if(isset($data['houses'])) {
+            houses()->attach($data['houses']);
+        }
+
+
+        return redirect()->route('admin.promotions.index')->with('status', 'Annuncio pubblicato con successo');
     }
 
     /**
@@ -69,9 +88,7 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        $message = Message::findOrFail($id);
 
-        return view('admin.messages.show', compact('message'));
     }
 
     /**
@@ -105,17 +122,6 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        $message = Message::findOrFail($id);
-
-        // Controllo aggiuntivo per cancellazione messaggio
-        $user = Auth::id();
-        $my = $message->house->user_id;
-        if ($user != $my) {
-            // abort('404');
-            return back()->with('status', 'Non puoi cancellare la pagina');
-        }
-        $delete = $message->delete();
-
-        return redirect()->back()->with('status', 'Messaggio cancellato correttamente');
+        //
     }
 }
