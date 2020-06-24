@@ -1,16 +1,14 @@
 @extends('layouts.layout')
 @section('content')
+    <style>
+        .container-adminHousesShow {
+            background-image: url('{{asset('storage/' . $house->photo)}}');
+            background-size: cover;
+
+        }
+
+    </style>
     <div class="container-adminHousesShow">
-        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="10000">
-                <img src="{{asset('storage/' . $house->photo)}}" alt="">
-            </div>
-            {{-- <div class="carousel-item" data-interval="2000">
-              <img src="..." class="d-block w-100" alt="...">
-            </div> --}}
-          </div>
-        </div>
         <div class="card-ahs">
             <div class="row">
                 <div class="col-12">

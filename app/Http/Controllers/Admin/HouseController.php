@@ -39,12 +39,9 @@ class HouseController extends Controller
     public function create()
     {
         $services = Service::all();
-        $houseIds = House::where('user_id', '=', Auth::id())->select('id')->get();
-        $test = $houseIds->toArray();
-        // dd($test[]);
-        $photos = Photo::where('house_id', '=', $test)->get();
 
-        return view('admin.houses.create', compact('services','photos'));
+
+        return view('admin.houses.create', compact('services'));
     }
 
     /**
@@ -82,7 +79,6 @@ class HouseController extends Controller
             'services' => 'required|array',
             'services.*' => 'exists:services,id'
         ]);
-
 
 
         if ($validator->fails()) {
@@ -144,6 +140,7 @@ class HouseController extends Controller
     {
         $house = House::findOrFail($id);
         $services = Service::all();
+        
         return view('admin.houses.edit', compact('house', 'services'));
     }
 

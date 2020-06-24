@@ -10991,14 +10991,14 @@ header nav button:hover {
 /* MAIN */
 
 .container-adminHousesShow {
-  margin-top: 65px;
   position: relative;
+  min-height: 1200px;
 }
 
 .container-adminHousesShow .card-ahs {
   background-color: white;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
@@ -11032,7 +11032,6 @@ header nav button:hover {
 }
 
 .container-adminHousesShow .carousel-item {
-  height: 100vh;
   width: 100vw;
 }
 
