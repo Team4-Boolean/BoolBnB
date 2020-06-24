@@ -8,7 +8,10 @@
                 <li class="breadcrumb-item active" aria-current="page">Pages</li>
 		    </ol>
         </nav>
-
+        <div class="header-right">
+                    <input type="text" placeholder="Cerca film o serie TV..  " class="search-input"/>
+                    <button type="button" class="btn-search">Cerca</button><br><br>
+                </div>
         {{-- TUTTI POSSONO VEDERE LE CASE --}}
         <div class="row">
             <div class="col-5">

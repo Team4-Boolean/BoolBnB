@@ -63,4 +63,35 @@ $(document).ready(function () {
         $('.container-messages-show').hide();
     });
 
+    $('.search-input').keypress(function (event) {
+        if (event.key == 'Enter') {
+            houseSearch();
+        }
+    });
+
+    function houseSearch() {
+        var searchTxt = $(".search-input").val();
+        $.ajax({
+            'url' : '/api/houses' + searchTxt,
+            'method': 'GET',
+            'headers' : {
+                'authorization' : 'Bearer Pippo?123'
+            },
+            // 'data': {
+            //                'query': searchText,
+            //              },
+            'success': function (data) {
+                var houses = data.data;
+                for (var i = 0; i < houses.length; i++) {
+                    var house = houses[i];
+                    console.log(house);
+                }
+
+            },
+            'error' : function (errors) {
+                console.log(errors);
+            }
+        });
+    }
+
 });
