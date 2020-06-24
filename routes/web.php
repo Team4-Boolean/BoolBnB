@@ -30,6 +30,8 @@ Route::prefix('admin')
     Route::resource('houses', 'HouseController');
     Route::resource('photos', 'PhotoController');
     Route::resource('messages', 'MessageController');
+    Route::resource('promotions', 'PromotionController');
+
 });
 
 Route::resource('houses', 'HouseController');

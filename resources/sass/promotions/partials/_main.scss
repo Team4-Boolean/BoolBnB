@@ -1,0 +1,13 @@
+.container-promotions-big {
+    height: 100px;
+    width: 100vW;
+    display: flex;
+    justify-content: center;
+    .container-promotions-small {
+        height: 100px;
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

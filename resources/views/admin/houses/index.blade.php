@@ -4,7 +4,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Home</li>
-             <li class="breadcrumb-item active" aria-current="page">Pages</li>
+             <li class="breadcrumb-item active" aria-current="page">Houses</li>
             </ol>
         </nav>
         <div class="row">
@@ -19,7 +19,7 @@
             <thead>
                 <th>ID</th>
                 <th>Title</th>
-                <th colspan="3">Action</th>
+                <th colspan="4">Action</th>
             </thead>
             <tbody>
                 @foreach ($houses as $key => $house)
@@ -40,5 +40,8 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="offset-3 col-2">
+        <a href="{{route('admin.promotions.index')}}" style="color:red"> <h3> Sponsorizza una casa </h13></a>
     </div>
 @endsection

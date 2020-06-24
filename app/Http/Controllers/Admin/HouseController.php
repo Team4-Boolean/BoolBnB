@@ -211,4 +211,13 @@ class HouseController extends Controller
 
         return redirect()->back()->with('status', 'Annuncio cancellato con successo');
     }
+
+    
+    public function promotions($id)
+    {
+        $house = House::findOrFail($id);
+        $promotions = Promotion::all();
+
+        return view('admin.houses.promotions', compact('house', 'promotions'));
+    }
 }
