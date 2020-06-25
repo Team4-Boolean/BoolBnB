@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\House;
 use App\Promotion;
@@ -18,14 +19,18 @@ class HouseController extends Controller
     {
         $houses = House::all();
         // $promotions = Promotion::all();
-        return view('guest.index',compact('houses'));
+        return view('guest.index', compact('houses'));
+
     }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function create()
     {
         //
@@ -39,7 +44,15 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        // dd($data['latitude']);
+        // Str::of(($data['longitude'],$data['latitude'])->slug('-');
+
+        $lat = $data['latitude'];
+        $log = $data['longitude'];
+        // dd($slug);
+
+        return redirect()->route('search.index',compact('lat','log'));
     }
 
     /**

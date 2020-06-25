@@ -6,7 +6,6 @@
             background-size: cover;
 
         }
-
     </style>
     <div class="container-adminHousesShow">
         <div class="card-ahs">

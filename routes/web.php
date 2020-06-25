@@ -32,7 +32,11 @@ Route::prefix('admin')
     Route::resource('messages', 'MessageController');
 });
 
+Route::get('/houses/search', 'SearchController@index')->name('search.index');
+
 Route::resource('houses', 'HouseController');
+
+
 
 //Save message
 Route::post('messages', 'MessageController@store')->name('save_message');

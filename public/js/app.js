@@ -47747,121 +47747,164 @@ $(document).ready(function () {
   $('#mobile-show').click(function () {
     $('.container-messages-index').show();
     $('.container-messages-show').hide();
-  }); //API
-
-  var urlBase = '/api/houses';
-  stampa();
-
-  function stampa() {
-    $.ajax({
-      url: '/api/houses',
-      method: 'GET',
-      headers: {
-        'Authorization': 'Bearer TEST1234'
-      },
-      success: function success(data) {
-        console.log(data);
-      },
-      error: function error() {// alert('errore');
-      }
-    });
-  }
-
-  ; // Angolia
+  }); // Angolia
 
   var places = __webpack_require__(/*! places.js */ "./node_modules/places.js/index.js");
 
   var placesAutocomplete = places({
     appId: 'plHITMYHF3UE',
     apiKey: '61a6ce694b1ac511d9482961428abdf1',
-    container: document.querySelector('#address-map')
-  });
-  placesAutocomplete.on('change', function (e) {
-    console.log(e.suggestion);
+    container: document.querySelector("#address")
   });
   console.log(placesAutocomplete);
   placesAutocomplete.on('change', function resultSelected(e) {
     document.querySelector('#latitude').value = e.suggestion.latlng.lat || '';
     document.querySelector('#longitude').value = e.suggestion.latlng.lng || '';
-  }); // Angolia map
+  }); //  $('#dios').click(function () {
+  //   stampa(lat,log);
+  // });
+  // se l'url ha un determinato path fai partire l'ajax
 
-  var map = L.map('map-example-container', {
-    scrollWheelZoom: false,
-    zoomControl: false
-  });
-  var osmLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom: 1,
-    maxZoom: 13,
-    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
-  });
-  var markers = [];
-  map.setView(new L.LatLng(0, 0), 1);
-  map.addLayer(osmLayer);
-  placesAutocomplete.on('suggestions', handleOnSuggestions);
-  placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
-  placesAutocomplete.on('change', handleOnChange);
-  placesAutocomplete.on('clear', handleOnClear);
+  var search = $(location).attr('search');
+  var searchParams1 = new URLSearchParams(search);
+  var lat = searchParams1.get("lat");
+  var log = searchParams1.get("log");
+  stampa(lat, log); //API
 
-  function handleOnSuggestions(e) {
-    markers.forEach(removeMarker);
-    markers = [];
+  var urlBase = '/api/houses';
 
-    if (e.suggestions.length === 0) {
-      map.setView(new L.LatLng(0, 0), 1);
-      return;
-    }
-
-    e.suggestions.forEach(addMarker);
-    findBestZoom();
-  }
-
-  function handleOnChange(e) {
-    markers.forEach(function (marker, markerIndex) {
-      if (markerIndex === e.suggestionIndex) {
-        markers = [marker];
-        marker.setOpacity(1);
-        findBestZoom();
-      } else {
-        removeMarker(marker);
+  function stampa(lat, log) {
+    $.ajax({
+      url: '/api/houses/' + lat + '/' + log,
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer TEST1234'
+      },
+      success: function success(data) {
+        console.log(data); // var search = $(location).attr('search');
+        // var searchParams = new URLSearchParams(search);
+        // searchParams.set("log", log);
+        // searchParams.set("lat", lat);
+      },
+      error: function error() {// alert('errore');
       }
     });
   }
 
-  function handleOnClear() {
-    map.setView(new L.LatLng(0, 0), 1);
-    markers.forEach(removeMarker);
-  }
+  ;
+  $('#tasto').click(function () {
+    houseSearch();
+  });
 
-  function handleOnCursorchanged(e) {
-    markers.forEach(function (marker, markerIndex) {
-      if (markerIndex === e.suggestionIndex) {
-        marker.setOpacity(1);
-        marker.setZIndexOffset(1000);
-      } else {
-        marker.setZIndexOffset(0);
-        marker.setOpacity(0.5);
-      }
-    });
-  }
+  function houseSearch() {
+    var log = $("#longitude").val();
+    console.log(log + 'test');
+    var lat = $("#latitude").val();
+    stampa(lat, log); // $.ajax({
+    //     'url' : '/api/houses' + searchTxt,
+    //     'method': 'GET',
+    //     'headers' : {
+    //         'authorization' : 'Bearer Pippo?123'
+    //     },
+    //     // 'data': {
+    //     //                'query': searchText,
+    //     //              },
+    //     'success': function (data) {
+    //         var houses = data.data;
+    //         for (var i = 0; i < houses.length; i++) {
+    //             var house = houses[i];
+    //             console.log(house);
+    //         }
+    //
+    //     },
+    //     'error' : function (errors) {
+    //         console.log(errors);
+    //     }
+    // });
+  } // Angolia map
+  //
+  // var map = L.map('map-example-container', {
+  //     scrollWheelZoom: false,
+  //     zoomControl: false
+  //   });
+  //
+  //   var osmLayer = new L.TileLayer(
+  //     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //       minZoom: 1,
+  //       maxZoom: 13,
+  //       attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+  //     }
+  //   );
+  //
+  //   var markers = [];
+  //
+  //   map.setView(new L.LatLng(0, 0), 1);
+  //   map.addLayer(osmLayer);
+  //
+  //   placesAutocomplete.on('suggestions', handleOnSuggestions);
+  //   placesAutocomplete.on('cursorchanged', handleOnCursorchanged);
+  //   placesAutocomplete.on('change', handleOnChange);
+  //   placesAutocomplete.on('clear', handleOnClear);
+  //
+  //   function handleOnSuggestions(e) {
+  //     markers.forEach(removeMarker);
+  //     markers = [];
+  //
+  //     if (e.suggestions.length === 0) {
+  //       map.setView(new L.LatLng(0, 0), 1);
+  //       return;
+  //     }
+  //
+  //     e.suggestions.forEach(addMarker);
+  //     findBestZoom();
+  //   }
+  //
+  //   function handleOnChange(e) {
+  //     markers
+  //       .forEach(function(marker, markerIndex) {
+  //         if (markerIndex === e.suggestionIndex) {
+  //           markers = [marker];
+  //           marker.setOpacity(1);
+  //           findBestZoom();
+  //         } else {
+  //           removeMarker(marker);
+  //         }
+  //       });
+  //   }
+  //
+  //   function handleOnClear() {
+  //     map.setView(new L.LatLng(0, 0), 1);
+  //     markers.forEach(removeMarker);
+  //   }
+  //
+  //   function handleOnCursorchanged(e) {
+  //     markers
+  //       .forEach(function(marker, markerIndex) {
+  //         if (markerIndex === e.suggestionIndex) {
+  //           marker.setOpacity(1);
+  //           marker.setZIndexOffset(1000);
+  //         } else {
+  //           marker.setZIndexOffset(0);
+  //           marker.setOpacity(0.5);
+  //         }
+  //       });
+  //   }
+  //
+  //   function addMarker(suggestion) {
+  //     var marker = L.marker(suggestion.latlng, {opacity: .4});
+  //     marker.addTo(map);
+  //     markers.push(marker);
+  //   }
+  //
+  //   function removeMarker(marker) {
+  //     map.removeLayer(marker);
+  //   }
+  //
+  //   function findBestZoom() {
+  //     var featureGroup = L.featureGroup(markers);
+  //     map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
+  //   }
 
-  function addMarker(suggestion) {
-    var marker = L.marker(suggestion.latlng, {
-      opacity: .4
-    });
-    marker.addTo(map);
-    markers.push(marker);
-  }
-
-  function removeMarker(marker) {
-    map.removeLayer(marker);
-  }
-
-  function findBestZoom() {
-    var featureGroup = L.featureGroup(markers);
-    map.fitBounds(featureGroup.getBounds().pad(0.5), {
-      animate: false
-    });
-  }
 });
 
 /***/ }),

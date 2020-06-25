@@ -19,3 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('api.auth')->get('/houses', 'Api\HouseController@getAll');
+
+// Route::middleware('api.auth')->get('houses/{id}', 'Api\HouseController@getHouse');
+Route::middleware('api.auth')->get('/houses/{lat}/{log}', 'Api\HouseController@getHouse');

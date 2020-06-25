@@ -3,11 +3,13 @@
 	min-height: 1200px;
 	.card-ahs {
 		background-color: white;
-		position: absolute;
-		top: 40%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+		// position: absolute;
+		// top: 40%;
+		// left: 50%;
+		// transform: translate(-50%,-50%);
 		width: 70%;
+		display: block;
+		margin: 70px auto;
 		padding: 20px;
 		border-radius: 5px;
 		opacity: 0.95;

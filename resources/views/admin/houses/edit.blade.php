@@ -90,7 +90,7 @@
 
         <div class="form-group">
                 <label for="address">Address</label>
-                <input type="search" id="address-map" name="address" placeholder="Where are we going?"> </input>
+                <input type="search" id="address" name="address" placeholder="Where are we going?"> </input>
                 {{-- <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="{{old('address')}}"></input> --}}
             @error('address')
                 <span class='alert alert-danger'>
@@ -98,10 +98,10 @@
                 </span>
             @enderror
         </div>
-        <div id="map-example-container"></div>
+        {{-- <div id="map-example-container"></div>
         <style>
           #map-example-container {height: 100px};
-        </style>
+        </style> --}}
 
         {{-- LONG --}}
         <div class="form-group">
