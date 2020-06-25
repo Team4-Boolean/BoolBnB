@@ -21,8 +21,11 @@ class PromotionController extends Controller
      */
     public function index()
     {
+        // Seleziono tutte le categorie
         $promotions = Promotion::all();
+        // Seleziono solo le case riferiti a quell'utente
         $houses = House::where('user_id', '=', Auth::id())->get();
+
         return view('admin.promotions.index', compact('promotions', 'houses'));
     }
 
@@ -46,13 +49,12 @@ class PromotionController extends Controller
     {
         $data = $request->all();
 
-        $validator = Validator::make($data, [
-            'promotions' => 'required|array',
-            'promotions.*' => 'exists:promotions,id',
-            'houses' => 'required|array',
-            'houses.*' => 'exists:houses,id'
-        ]);
+        // Trovo i dati riferiti alla casa che seleziono
+        $house = House::findOrFail($data['house_id']);
 
+        $validator = Validator::make($data, [
+            'promotion_id' => 'required'
+        ]);
 
         if ($validator->fails()) {
             return redirect()->back()->with('status', 'Campo mancante')
@@ -60,24 +62,12 @@ class PromotionController extends Controller
                 ->withInput();
         }
 
-        $house = new House;
-        $house->fill($data);
-        $saved = $house->save();
-
-        // if(!$saved) {
-        //     abort('404');
-        // }
-
-        if(isset($data['promotions'])) {
-            promotions()->attach($data['promotions']);
+        // Faccio l'attach della promozione selezionata, con la casa selezionata, per la tabella
+        if(isset($data['promotion_id'])) {
+            $house->promotions()->attach($data['promotion_id']);
         }
 
-        if(isset($data['houses'])) {
-            houses()->attach($data['houses']);
-        }
-
-
-        return redirect()->route('admin.promotions.index')->with('status', 'Annuncio pubblicato con successo');
+        return redirect()->route('admin.promotions.index')->with('status', 'Promo attivata con successo');
     }
 
     /**
