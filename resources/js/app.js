@@ -65,36 +65,36 @@ $(document).ready(function () {
 
 
     // Angolia
-
-    var places = require('places.js');
-    var placesAutocomplete = places({
-      appId: 'plHITMYHF3UE',
-      apiKey: '61a6ce694b1ac511d9482961428abdf1',
-      container: document.querySelector("#address")
-  });
-
-   console.log(placesAutocomplete);
-
-   placesAutocomplete.on('change', function resultSelected(e) {
-     document.querySelector('#latitude').value = e.suggestion.latlng.lat || '';
-     document.querySelector('#longitude').value = e.suggestion.latlng.lng || '';
-
-   });
-
+//
+//     var places = require('places.js');
+//     var placesAutocomplete = places({
+//       appId: 'plHITMYHF3UE',
+//       apiKey: '61a6ce694b1ac511d9482961428abdf1',
+//       container: document.querySelector("#address")
+//   });
+//
+//    console.log(placesAutocomplete);
+//
+//    placesAutocomplete.on('change', function resultSelected(e) {
+//      document.querySelector('#latitude').value = e.suggestion.latlng.lat || '';
+//      document.querySelector('#longitude').value = e.suggestion.latlng.lng || '';
+//
+//    });
+//
 //  $('#dios').click(function () {
 //   stampa(lat,log);
 // });
-
-// se l'url ha un determinato path fai partire l'ajax
-
-var search = $(location).attr('search');
-
-var searchParams1 = new URLSearchParams(search);
-var lat = searchParams1.get("lat");
-var log = searchParams1.get("log");
-
-stampa(lat,log);
-
+//
+// // se l'url ha un determinato path fai partire l'ajax
+//
+// var search = $(location).attr('search');
+//
+// var searchParams1 = new URLSearchParams(search);
+// var lat = searchParams1.get("lat");
+// var log = searchParams1.get("log");
+//
+// stampa(lat,log);
+//
 
    //API
 
@@ -238,5 +238,7 @@ stampa(lat,log);
    //     var featureGroup = L.featureGroup(markers);
    //     map.fitBounds(featureGroup.getBounds().pad(0.5), {animate: false});
    //   }
+
+   var braintree = require('braintree');
 
 });

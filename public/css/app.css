@@ -11037,6 +11037,21 @@ header nav button:hover {
   font-size: 15px;
 }
 
+.container-promotions-big {
+  height: 100px;
+  width: 100vW;
+  display: flex;
+  justify-content: center;
+}
+
+.container-promotions-big .container-promotions-small {
+  height: 100px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /* FOOTER */
 
 footer {
