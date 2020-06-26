@@ -25,18 +25,18 @@ header {
             padding: 0 15px;
             a {
                 &:hover {
-                    color: $blue;
+                    color: blue;
                 }
             }
         }
         button {
            margin-left: 20px;
            padding: 10px;
-           border: 1px solid $blue;
+           border: 1px solid blue;
            color: #ffffff;
-           background-color: $blue;
+           background-color: blue;
            &:hover {
-               color: $blue;
+               color: blue;
                background-color: #ffffff;
            }
        }

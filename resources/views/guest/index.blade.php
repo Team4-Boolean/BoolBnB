@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
-
+<!--
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -32,5 +32,116 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+-->
+<div class="container-home-index">
+
+
+    <div class="title-home-index">
+        <h2>Appartamenti in evidenza</h2>
+    </div>
+
+        <div class="centered">
+
+            <section class="cards-home-index">
+
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-home-index">
+                    <a href="#">
+                        <picture class="thumbnail">
+                            <img src="https://picsum.photos/200/230">
+                        </picture>
+                        <div class="card-content">
+
+                            <h2>Nome Casa</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
     </div>
 @endsection
