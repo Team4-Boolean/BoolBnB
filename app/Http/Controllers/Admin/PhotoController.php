@@ -4,6 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
+use App\Photo;
+use App\House;
+use App\User;
 
 class PhotoController extends Controller
 {
@@ -14,7 +22,13 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        // $houses = House::all();
+
+        $houses = House::where('user_id', '=', Auth::id())->get();
+        $photos = Photo::all();
+        // $photos = Photo::where('house_id','=','houses.id')->get();
+
+        return view('admin.photos.index',compact('houses','photos'));
     }
 
     /**
@@ -24,7 +38,8 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        $houses = House::where('user_id', Auth::id())->get();
+        return view('admin.photos.create', compact('houses'));
     }
 
     /**
@@ -35,7 +50,31 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'house_id' => 'required',
+            'name' => 'required|string',
+            'description' => 'required',
+            'path' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'Campo mancante')
+            ->withErrors($validator)
+                ->withInput();
+        }
+        $path = Storage::disk('public')->put('images', $data['path']);
+        $data['path'] = $path;
+        $photo = new Photo;
+        $photo->fill($data);
+        $saved = $photo->save();
+
+        if(!$saved) {
+            abort('404');
+        }
+
+        return redirect()->route('admin.houses.index')->with('status', 'Foto pubblicata con successo');
+
     }
 
     /**
@@ -57,7 +96,8 @@ class PhotoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $photo = Photo::findOrFail($id);
+        return view('admin.photos.edit', compact('photo'));
     }
 
     /**
@@ -69,7 +109,36 @@ class PhotoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $photo = Photo::findOrFail($id);
+        $validator = Validator::make($data, [
+            // 'house_id' => 'required',
+            'name' => 'required|string',
+            'description' => 'required',
+            'path' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'Campo mancante')
+            ->withErrors($validator)
+                ->withInput();
+        }
+
+        if (isset($data['path'])) {
+            Storage::disk('public')->delete($data['path']);
+
+        }
+        $path = Storage::disk('public')->put('images', $data['path']);
+        $data['path'] = $path;
+        $photo->fill($data);
+        $updated = $photo->update();
+
+        if(!$updated) {
+            abort('404');
+        }
+
+        return redirect()->route('admin.photos.index')->with('status', 'Foto modificata con successo');
+
     }
 
     /**
@@ -80,6 +149,12 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = Photo::findOrFail($id);
+
+        Storage::disk('public')->delete($photo['path']);
+        // $photo->house()->delete();
+        $deleted = $photo->delete();
+
+        return redirect()->back()->with('status', 'Foto  cancellata con successo');
     }
 }

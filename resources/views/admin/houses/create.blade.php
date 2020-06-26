@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.layout')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1/leaflet.css" />
+<script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
 @section('content')
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
@@ -91,41 +93,36 @@
         {{-- ADDRESS --}}
         <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="{{old('address')}}"></input>
+                <input type="search" id="address-map" name="address" placeholder="Where are we going?"> </input>
+                {{-- <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="{{old('address')}}"></input> --}}
             @error('address')
                 <span class='alert alert-danger'>
                     {{$message}}
                 </span>
             @enderror
         </div>
+        <div id="map-example-container"></div>
+        <style>
+          #map-example-container {height: 100px};
+        </style>
 
         {{-- LONG --}}
         <div class="form-group">
-                <label for="longitude">Longitude</label>
-                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Enter Longitude" value="{{old('longitude')}}"></input>
-            @error('longitude')
-                <span class='alert alert-danger'>
-                    {{$message}}
-                </span>
-            @enderror
+                <input type="hidden" class="form-control" name="longitude" id="longitude"></input>
         </div>
-
         {{-- LAT --}}
         <div class="form-group">
-                <label for="latitude">Latitude</label>
-                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Enter Latitude" value="{{old('latitude')}}"></input>
-            @error('latitude')
-                <span class='alert alert-danger'>
-                    {{$message}}
-                </span>
-            @enderror
+                <input type="hidden" class="form-control" name="latitude" id="latitude"></input>
         </div>
 
         {{-- PHOTO --}}
+        {{-- @foreach ($photos as $key => $photo)
+            <img src="{{asset('storage/' .$photo->path)}}" alt="">
+        @endforeach --}}
         <div class="form-group">
-            <label for="photo">Seleziona un immagine di copertina</label>
+            <label for="photos">Seleziona un immagine di copertina</label>
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo">
+              <input multiple type="file" class="custom-file-input" id="inputGroupFile01" name="photos[]">
               <label class="custom-file-label" for="inputGroupFile01">Browse</label>
             </div>
             @error('photo')
@@ -134,7 +131,7 @@
                 </span>
             @enderror
         </div>
-        
+
         {{-- TAGS --}}
         <div class="form-check">
             <label for="services">Services</label>
