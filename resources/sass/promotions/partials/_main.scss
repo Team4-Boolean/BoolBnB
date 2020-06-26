@@ -1,13 +1,36 @@
-.container-promotions-big {
-    height: 100px;
-    width: 100vW;
-    display: flex;
-    justify-content: center;
-    .container-promotions-small {
+.container-promotions {
+    .promotions-cit {
         height: 100px;
-        width: 80%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
+        font-style: oblique;
+    }
+    .form-check {
+        .promotions-title {
+            font-size: 30px;
+            color: #ff5a5f;
+        }
+        .container-promotions-big {
+            border-bottom: 0.5px solid #e9ecef;
+            .container-promotions-small {
+                width: 80%;
+                height: 80px;
+                margin-left: 20px;
+                display: flex;
+                align-items: center;
+                .promotions-body {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .promotions-send-button {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        .promotions-button {
+            margin-left: 20px;
+        }
     }
 }

@@ -30,9 +30,21 @@ Route::prefix('admin')
     Route::resource('houses', 'HouseController');
     Route::resource('photos', 'PhotoController');
     Route::resource('messages', 'MessageController');
+    Route::resource('promotions', 'PromotionController');
+
 });
 
 Route::resource('houses', 'HouseController');
 
 //Save message
 Route::post('messages', 'MessageController@store')->name('save_message');
+
+// Payment
+// Reindirizzo alla pagina di caricamento
+Route::get('/payment', function () {
+    return view('payment');
+})->name('payment');
+
+Route::get('/checkout', 'PaymentsController@process')->name('check');
+
+Route::post('/payment/process', 'PaymentsController@store')->name('payment.process');

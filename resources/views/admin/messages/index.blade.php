@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
     <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
@@ -69,7 +69,7 @@
         </div>
     </div>
     </div>
-    
+
     <script>
       AOS.init();
     </script>

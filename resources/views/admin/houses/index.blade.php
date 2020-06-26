@@ -9,10 +9,7 @@
         </nav>
         <div class="row">
             <div class="col-5">
-                <h2>Pages</h2>
-            </div>
-            <div class="offset-3 col-2">
-                <a href="{{route('admin.houses.create')}}">Crea una pagina</a>
+                <h2> Houses </h2>
             </div>
         </div>
         <table class="table">
@@ -40,5 +37,13 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="row" style="margin: 50px 0;">
+        <div class="offset-2 col-4 go-to-promotions">
+            <button type="button" class="btn btn-outline-warning"><a href="{{route('admin.promotions.index')}}"> <h3> Sponsorizza una casa </h3></a></button>
+        </div>
+        <div class="offset-1 col-4" >
+            <button type="button" class="btn btn-outline-success"><a href="{{route('admin.houses.create')}}"> <h3> Inserisci una nuova casa </h3> </a></button>
+        </div>
     </div>
 @endsection
