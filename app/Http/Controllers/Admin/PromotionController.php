@@ -67,7 +67,7 @@ class PromotionController extends Controller
             $house->promotions()->attach($data['promotion_id']);
         }
 
-        return redirect()->route('admin.promotions.index')->with('status', 'Promo attivata con successo');
+        return redirect()->route('payment')->with('status', 'Procedi al pagamento');
     }
 
     /**

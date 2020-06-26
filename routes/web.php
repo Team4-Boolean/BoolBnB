@@ -38,3 +38,13 @@ Route::resource('houses', 'HouseController');
 
 //Save message
 Route::post('messages', 'MessageController@store')->name('save_message');
+
+// Payment
+// Reindirizzo alla pagina di caricamento
+Route::get('/payment', function () {
+    return view('payment');
+})->name('payment');
+
+Route::get('/checkout', 'PaymentsController@process')->name('check');
+
+Route::post('/payment/process', 'PaymentsController@store')->name('payment.process');

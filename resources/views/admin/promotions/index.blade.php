@@ -55,9 +55,14 @@
             @enderror
         </div>
         <div class="form-group promotions-send-button">
-            <button type="submit" class="btn btn-outline-info promotions-button"> Attiva &#9745; </button>
+            <button type="submit" class="btn btn-outline-info promotions-button"> Attiva e procedi al pagamento &#9745;</button>
         </div>
+        {{-- <div class="container-promotions-payment">
+            <button type="button" class="btn btn-outline-success"> <a href="{{route('payment')}}"> Procedi al pagamento &dollar; </a></button>
+        </div> --}}
     </div>
+
+
     <script>
       AOS.init();
     </script>
