@@ -26,7 +26,8 @@ class PhotoController extends Controller
 
         $houses = House::where('user_id', '=', Auth::id())->get();
         $photos = Photo::all();
-        // $photos = Photo::where('house_id','=','houses.id')->get();
+
+
 
         return view('admin.photos.index',compact('houses','photos'));
     }
@@ -85,7 +86,10 @@ class PhotoController extends Controller
      */
     public function show($id)
     {
-        //
+        $house = House::findOrFail($id);
+        $photos = Photo::where('house_id', $id)->get();
+
+        return view('admin.photos.show', compact('house', 'photos'));
     }
 
     /**

@@ -9,7 +9,7 @@
         </nav>
         <div class="row">
             <div class="col-5">
-                <h2>Pages</h2>
+                <h2>Photos</h2>
             </div>
             <div class="offset-3 col-2">
                 <a href="{{route('admin.photos.create')}}">Aggiungi foto a un tuo appartamento</a>
