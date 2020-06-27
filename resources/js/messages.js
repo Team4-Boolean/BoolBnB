@@ -22,8 +22,8 @@
                 var houseId = message.house_id;
                 // Se l'id del file blade corrisponde a quello ciclato, allora lo stampo a schermo
                 if (bladeMessageId == arrayId) {
-                    $('.container-left-messages').append('<h5>' + body + '</h5>').css("background-color", "#b3ffb3");
-                    $('.messages-top-id').append('<h5>' + 'Messaggio riferito al tuo annuncio id #' + houseId + '</h5>')
+                    $('.container-left-messages').append('<h5>' + body + '</h5>').css("background-color", "#f2f2f2");
+                    $('.messages-top-id').append('<h5>' + 'Messaggio riferito al tuo annuncio ID #' + houseId + '</h5>')
                 }
             }
         });
@@ -33,7 +33,7 @@
     $('.button').click(function() {
         var valueRisp = $('.messages-risp').val();
         $('.messages-risp').val('');
-        $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#b3ffb3");
+        $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#f2f2f2");
     });
 
     // All'inserimento di un testo nell'input, me lo stampa a schermo premendo invio (keyCode 13)
@@ -41,7 +41,7 @@
         if (event.keyCode == 13) {
             var valueRisp = $('.messages-risp').val();
             $('.messages-risp').val('');
-            $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#b3ffb3");
+            $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#f2f2f2");
         }
     });
 

@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 @section('content')
+    <div class="container-welcome-empty">
+
+    </div>
     <div class="container-welcome-top">
 
     </div>

@@ -1,0 +1,88 @@
+.container-error {
+    .container-error-empty {
+        height: 70px;
+    }
+    .container-error-body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .container-error-desktop {
+            height: 400px;
+            width: 500px;
+            border: 1px solid #ff5a5f;
+            border-radius: 20px;
+            margin-bottom: 2em;
+        	margin: 1rem .25em;
+        	-webkit-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+            box-shadow: 10px 10px 5px 0px rgba(133,131,133,1);
+            .error-header {
+                height: 10%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                background-color: #ff5a5f;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                span {
+                    margin-right: 20px;
+                    color: white;
+                }
+            }
+            .error-main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                h1 {
+                    font-size: 90px;
+                    color: #4d4d4d;
+                }
+                h2 {
+                    font-size: 80px;
+                }
+                h3 {
+                    margin-top: 20px;
+                    font-size: 35px;
+                    color: #4d4d4d;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .container-error {
+        .container-error-empty {
+        }
+        .container-error-body {
+            .container-error-desktop {
+                height: 200px;
+                width: 300px;
+                .error-header {
+                    span {
+                        margin-right: 10px;
+                        color: white;
+                    }
+                }
+                .error-main {
+                    h1 {
+                        font-size: 50px;
+                        color: #4d4d4d;
+                    }
+                    h2 {
+                        font-size: 40px;
+                    }
+                    h3 {
+                        margin-top: 10px;
+                        font-size: 20px;
+                        color: #4d4d4d;
+                    }
+                }
+            }
+        }
+    }
+}
