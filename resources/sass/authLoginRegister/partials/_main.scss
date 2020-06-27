@@ -1,0 +1,22 @@
+.card-container-AuthLoginRegister {
+    margin-top: 75px;
+    margin-bottom: 25px;
+    .bg-custom {
+        background-color: #ff5a5f;
+        color: white;
+    }
+    .btn-large {
+        width: 40%;
+    }
+    .btn-custom {
+        font-weight: bold;
+        background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
+        color: white;
+    }
+    .text-button {
+        padding-top: 10px;
+    }
+    .icon-button {
+        margin-left: 5px;
+    }
+}

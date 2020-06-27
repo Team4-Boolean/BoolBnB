@@ -11007,7 +11007,7 @@ a.text-dark:focus {
   display: block;
   float: left;
   font-size: 2em;
-  padding: 10px 20px;
+  padding: 1px 20px;
   text-decoration: none;
 }
 
@@ -11086,7 +11086,11 @@ a.text-dark:focus {
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 
-@media (min-width: 48em) {
+@media (min-width: 60em) {
+  .header {
+    height: 61px;
+  }
+
   .header li {
     float: left;
   }
@@ -11652,6 +11656,54 @@ img {
   .centered {
     max-width: 52em;
   }
+}
+
+.custom-margin {
+  margin-top: 75px;
+}
+
+.custom-margin .custom-nav {
+  font-weight: bold;
+}
+
+.card-container-CreateHouses {
+  margin-bottom: 25px;
+}
+
+.card-container-CreateHouses .card-header-custom {
+  margin-bottom: 10px;
+}
+
+.card-container-CreateHouses .card-custom {
+  padding: 0 10px;
+}
+
+.card-container-AuthLoginRegister {
+  margin-top: 75px;
+  margin-bottom: 25px;
+}
+
+.card-container-AuthLoginRegister .bg-custom {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.card-container-AuthLoginRegister .btn-large {
+  width: 40%;
+}
+
+.card-container-AuthLoginRegister .btn-custom {
+  font-weight: bold;
+  background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+  color: white;
+}
+
+.card-container-AuthLoginRegister .text-button {
+  padding-top: 10px;
+}
+
+.card-container-AuthLoginRegister .icon-button {
+  margin-left: 5px;
 }
 
 /* FOOTER */

@@ -4,7 +4,7 @@ var places = require('places.js');
 var placesAutocomplete = places({
   appId: 'plHITMYHF3UE',
   apiKey: '61a6ce694b1ac511d9482961428abdf1',
-  container: document.querySelector('#address-map'),
+  container: document.querySelector('#input-map'),
 })
 
 placesAutocomplete.on('change', function(e) {
