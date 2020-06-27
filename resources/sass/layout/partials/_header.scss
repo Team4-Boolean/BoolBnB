@@ -33,7 +33,7 @@
     display: block;
     float: left;
     font-size: 2em;
-    padding: 10px 20px;
+    padding: 1px 20px;
     text-decoration: none;
   }
 
@@ -116,15 +116,19 @@
   }
 }
 
-@media (min-width: 48em) {
-  .header {
-    li {
-      float: left;
+@media (min-width: 60em) {
 
-      a {
-        padding: 20px 30px;
-      }
+    .header {
+        height: 61px;
     }
+    .header {
+        li {
+          float: left;
+
+          a {
+            padding: 20px 30px;
+          }
+        }
 
     .menu {
       clear: none;
