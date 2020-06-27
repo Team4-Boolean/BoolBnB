@@ -34,8 +34,8 @@
                           Modifica appartamento
                         </a>
                         <a href="#" class="list-group-item ">Statistiche</a>
-                        <a href="#" class="list-group-item ">Attiva una promozione</a>
-                        <a href="#" class="list-group-item ">Modifica Foto</a>
+                        <a href="{{route('admin.promotions.index', $house->id)}}" class="list-group-item ">Attiva una promozione</a>
+                        <a href="{{route('admin.photos.index', $house->id)}}" class="list-group-item ">Modifica Foto</a>
                         <a href="{{route('admin.messages.index', $house->id)}}" class="list-group-item d-flex justify-content-between align-items-center">
                             Messaggi ricevuti
                             <span class="badge badge-primary badge-pill">{{$message}}</span>

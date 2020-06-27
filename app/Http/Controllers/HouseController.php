@@ -16,9 +16,12 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::all();
+        $promotions = Promotion::orderBy('price', 'DESC')->paginate(6);
+
+
+        // $houses = House::all();
         // $promotions = Promotion::all();
-        return view('guest.index',compact('houses'));
+        return view('guest.index',compact('promotions'));
     }
 
     /**
