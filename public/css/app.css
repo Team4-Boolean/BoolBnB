@@ -10971,55 +10971,139 @@ a.text-dark:focus {
 /* HEADER */
 
 .header {
-  height: 70px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
   z-index: 10;
-  background-color: #ffffff;
 }
 
-.header .logo img {
-  height: 40px;
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
 }
 
-.header .container-header {
-  min-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.header nav {
-  display: flex;
-  align-items: center;
+.header a {
+  color: #000;
 }
 
-.header nav li {
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+  color: blue;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
   display: inline-block;
-  padding: 0 15px;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.header nav li a:hover {
-  color: blue;
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
 }
 
-.header nav button {
-  margin-left: 20px;
-  padding: 10px;
-  border: 1px solid blue;
-  color: #ffffff;
-  background-color: blue;
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
 }
 
-.header nav button:hover {
-  color: blue;
-  background-color: #ffffff;
+.header .menu-icon .navicon:before {
+  top: 5px;
 }
 
-.header .header.shadow {
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+.header.shadow {
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+
+  .header li a {
+    padding: 20px 30px;
+  }
+
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
 }
 
 /* HEADER */
