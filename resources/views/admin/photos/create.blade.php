@@ -1,17 +1,18 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="{{route('admin.photos.index')}}">photos</a></li>
-              <li class="breadcrumb-item active" aria-current="page">create</li>
-            </ol>
-          </nav>
+    <div class="container-AdminPhotosCreate">
+        <div class="photo-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{url()->previous()}}">Tutte le foto</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Inserisci nuova foto</li>
+                </ol>
+            </nav>
         </div>
-      </div>
+        <div class="card-apc">
+            <div class="card-title">
+                <h2>Inserisci una nuova foto</h2>
+            </div>
       <div class="row">
         <div class="col-12">
         <form action="{{route('admin.photos.store')}}" method="POST" enctype="multipart/form-data">

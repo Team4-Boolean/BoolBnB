@@ -11586,6 +11586,120 @@ img {
   }
 }
 
+.container-GuestShowHouse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container-GuestShowHouse .card-gsh {
+  width: 80%;
+  padding-top: 100px;
+  background-color: white;
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-GuestShowHouse .card-gsh .house-photos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-photos .img {
+  position: relative;
+  margin-bottom: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 500px;
+}
+
+.container-GuestShowHouse .card-gsh .separe {
+  border: 1px solid lightgray;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-desc {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-desc p {
+  color: black;
+}
+
+.container-GuestShowHouse .card-gsh .house-services {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-services li {
+  list-style: none;
+  display: inline;
+  margin-right: 20px;
+  text-transform: capitalize;
+}
+
+.container-GuestShowHouse .card-gsh .house-services li i {
+  color: #ff5a5f;
+  margin-right: 7px;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .house-contact {
+  width: 50%;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .maps {
+  display: block;
+  width: 50%;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .maps #map-example-container {
+  height: 400px;
+  width: 100%;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .maps .search-hidden {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .container-GuestShowHouse .card-gsh .house-photos .img {
+    height: auto;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer {
+    display: block;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer .house-contact {
+    width: 100%;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer .maps {
+    display: block;
+    width: 100%;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer .maps #map-example-container {
+    height: 300px;
+    width: 100%;
+  }
+}
+
 .container-home-index {
   margin-top: 70px;
   background-color: #e6e6e6;
@@ -11670,6 +11784,134 @@ img {
   .centered {
     max-width: 52em;
   }
+}
+
+.container-AdminPhotosIndex {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.container-AdminPhotosIndex .photo-header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-AdminPhotosIndex .photo-header nav {
+  width: 60%;
+}
+
+.container-AdminPhotosIndex .card-api {
+  width: 80%;
+  padding-top: 50px;
+  background-color: white;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.container-AdminPhotosIndex .card-api .card-title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container-AdminPhotosIndex .card-api .card-photoContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container-AdminPhotosIndex .card-api .card-photoContainer .card-img {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-AdminPhotosIndex .card-api .card-photoContainer .card-img img {
+  width: 300px;
+  height: 200px;
+}
+
+.container-AdminPhotosIndex .card-api .card-photoContainer .card-img .action-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-AdminPhotosIndex .card-api .card-photoContainer .card-img .action-buttons .btn {
+  margin: 10px;
+}
+
+.container-AdminPhotosCreate {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.container-AdminPhotosCreate .photo-header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-AdminPhotosCreate .photo-header nav {
+  width: 100%;
+}
+
+.container-AdminPhotosCreate .card-apc {
+  width: 80%;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: white;
+  opacity: 0.95;
+  margin-bottom: 40px;
+}
+
+.container-AdminPhotosCreate {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.container-AdminPhotosCreate .photo-header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-AdminPhotosCreate .photo-header nav {
+  width: 100%;
+}
+
+.container-AdminPhotosCreate .card-apc {
+  width: 80%;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: white;
+  opacity: 0.95;
+  margin-bottom: 40px;
 }
 
 .custom-margin {

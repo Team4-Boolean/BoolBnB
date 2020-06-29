@@ -74,7 +74,7 @@ class PhotoController extends Controller
             abort('404');
         }
 
-        return redirect()->route('admin.houses.index')->with('status', 'Foto pubblicata con successo');
+        return redirect()->route('admin.photos.show', $photo->house_id)->with('status', 'Foto pubblicata con successo');
 
     }
 
@@ -141,7 +141,7 @@ class PhotoController extends Controller
             abort('404');
         }
 
-        return redirect()->route('admin.photos.index')->with('status', 'Foto modificata con successo');
+        return redirect()->route('admin.photos.show', $photo->house_id)->with('status', 'Foto modificata con successo');
 
     }
 

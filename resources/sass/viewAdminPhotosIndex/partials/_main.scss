@@ -1,0 +1,61 @@
+.container-AdminPhotosIndex{
+	padding-top: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: lightgray;
+	.photo-header{
+		width: 80%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		nav{
+			width: 60%;
+		}
+	}
+
+	.card-api{
+		width: 80%;
+		padding-top: 50px;
+		background-color: white;
+		opacity: 0.95;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 40px;
+		// flex-wrap: wrap;
+		.card-title{
+			display: flex;
+			justify-content: flex-start;
+		}
+		.card-photoContainer{
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			.card-img{
+				width: 350px;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				img{
+					width: 300px;
+					height: 200px;
+				}
+				.action-buttons{
+					display: flex;
+					flex-direction: row;
+					.btn{
+						margin: 10px;
+					}
+				}
+			}
+		}
+
+	}
+}

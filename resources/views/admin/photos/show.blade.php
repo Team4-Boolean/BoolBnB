@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="offset-1 col-10">
+    {{-- <div class="offset-1 col-10">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Home</li>
@@ -40,5 +40,44 @@
                     @endforeach
             </tbody>
         </table>
+    </div> --}}
+    <div class="container-AdminPhotosIndex">
+        <div class="photo-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{route('admin.houses.index')}}">Le tue case</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.houses.show', $house->id)}}">{{$house->title}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Foto dell'appartamento</li>
+                </ol>
+            </nav>
+            <div class="">
+                <a class="btn btn-success" href="{{route('admin.photos.create')}}">Aggiungi una nuova foto</a>
+            </div>
+
+        </div>
+        <div class="card-api">
+            <div class="card-title">
+                <h2>Le foto di: {{$house->title}}</h2>
+            </div>
+            <div class="card-photoContainer">
+                    @foreach ($photos as $key => $photo)
+                            @if($house->id == $photo->house_id)
+                                <div class="card-img">
+                                    <h4>{{$photo->name}}</h4>
+                                    <img src="{{asset('storage/' .$photo->path)}}" alt="">
+                                    {{$photo->description}}
+                                    <div class="action-buttons">
+                                        <a class="btn btn-warning" href="{{route('admin.photos.edit', $photo->id)}}">Modifica</a>
+                                        <form action="{{route('admin.photos.destroy', $photo->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input class="btn btn-danger" type="submit" value="Elimina">
+                                       </form>
+                                    </div>
+                                </div>
+                            @endif
+                    @endforeach
+            </div>
+        </div>
     </div>
 @endsection

@@ -1,47 +1,45 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="offset-1 col-10">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-             <li class="breadcrumb-item active" aria-current="page">Pages</li>
-            </ol>
-        </nav>
-        <div class="row">
-            <div class="col-5">
-                <h2>Photos</h2>
+    <div class="container-AdminPhotosIndex">
+        <div class="photo-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.houses.index')}}">I tuoi appartamenti</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tutte le tue foto</li>
+                </ol>
+            </nav>
+            <div class="">
+                <a class="btn btn-success" href="{{route('admin.photos.create')}}">Aggiungi una nuova foto</a>
             </div>
-            <div class="offset-3 col-2">
-                <a href="{{route('admin.photos.create')}}">Aggiungi foto a un tuo appartamento</a>
+
+        </div>
+        <div class="card-api">
+            <div class="card-title">
+                <h2>Le foto dei tuoi appartamenti</h2>
             </div>
         </div>
-        <table class="table">
-            <thead>
-                <th>CASA</th>
-                <th>NAME</th>
-                <th>DESCRIPTION</th>
-                <th colspan="3">Action</th>
-            </thead>
-            <tbody>
+            <div class="card-photoContainer">
                 @foreach ($houses as $key => $house)
                     @foreach ($photos as $key => $photo)
-                        <tr>
-                            {{-- POSSO VEDERE SOLO GLI ANNUNCI PUBBLICATI DA ME --}}
                             @if($house->id == $photo->house_id)
-                            <td>{{$house->title}}</td>
-                            <td>{{$photo->name}}</td>
-                            <td>{{$photo->description}}</td>
-                            <td><a class="btn btn-secondary" href="{{route('admin.photos.edit', $photo->id)}}">Modifica</a></td>
-                            <td><form action="{{route('admin.photos.destroy', $photo->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                            <input class="btn btn-danger" type="submit" value="Elimina">
-                           </form></tr>
+                                <div class="card-img">
+                                    <h4>{{$house->title}}</h4>
+                                    <img src="{{asset('storage/' .$photo->path)}}" alt="">
+                                    {{$photo->name}}
+                                    <div class="action-buttons">
+                                        <a class="btn btn-warning" href="{{route('admin.photos.edit', $photo->id)}}">Modifica</a>
+                                        <form action="{{route('admin.photos.destroy', $photo->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input class="btn btn-danger" type="submit" value="Elimina">
+                                       </form>
+                                    </div>
+                                </div>
                             @endif
-                        </tr>
                     @endforeach
                 @endforeach
-            </tbody>
-        </table>
+            </div>
+        </div>
     </div>
 @endsection

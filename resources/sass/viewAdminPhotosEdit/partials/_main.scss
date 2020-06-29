@@ -1,0 +1,36 @@
+.container-AdminPhotosCreate{
+	padding-top: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: lightgray;
+	.photo-header{
+		width: 80%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		nav{
+			width: 100%;
+		}
+	}
+	.card-apc{
+		width: 80%;
+		padding-top: 40px;
+		padding-left: 30px;
+		padding-right: 30px;
+		background-color: white;
+		opacity: 0.95;
+		margin-bottom: 40px;
+	}
+}
+
+// @media screen and (max-width: 800px) {
+// 	.container-AdminPhotosEdit{
+// 		.card-ape{
+// 				.img{
+// 					height: auto;
+// 				}
+// 		}
+// 	}
+// }

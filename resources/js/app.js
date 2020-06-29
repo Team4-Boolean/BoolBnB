@@ -5,5 +5,4 @@ require('./viewGuestIndex');
 require('./messages');
 require('./api');
 require('./angolia');
-
 });
