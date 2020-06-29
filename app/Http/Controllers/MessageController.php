@@ -68,7 +68,7 @@ class MessageController extends Controller
             abort('404');
         }
 
-        // INVIO LA MAIL A ME OGNI VOLTA CHE INVIANO UN MESSAGGIO
+        // Invio la mail ad ogni messaggio inviato
         Mail::to('mail@mail.it')->send(new SendNewMail($message));
         return redirect()->back()->with('status', 'messaggio inviato correttamente');
 

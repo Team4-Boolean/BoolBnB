@@ -20,6 +20,7 @@
                                         @method('DELETE')
                                     <input class="btn btn-danger" type="submit" value="Elimina">
                                    </form>
+                                   
                                 </div>
                             </div>
                         {{-- <td>#{{$house->id}}</td>

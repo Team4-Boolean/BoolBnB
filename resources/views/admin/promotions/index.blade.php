@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 @section('content')
+    <div class="container-promotions-empty">
+
+    </div>
     <div class="offset-1 col-10 container-promotions">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -8,9 +11,9 @@
             </ol>
         </nav>
         <div class="promotions-cit">
-            <h3> Scegli una delle nostre sponsorizzazioni, e metti in risalto la tua casa! </h3>
+            <h3> Metti in risalto la tua casa con una sponsorizzazione! </h3>
         </div>
-        <form class="" action="{{route('admin.promotions.store')}}"  method="post">
+        <form class="" action="{{route('admin.promotions.store')}}"  method="post" >
             @csrf
             @method('POST')
         <form>
@@ -57,11 +60,10 @@
 
             {{-- <button type="button" class="btn btn-outline-success"> <a href="{{route('payment')}}"> Procedi al pagamento &dollar; </a></button> --}}
         <div class="form-group promotions-send-button">
-            <a href="{{route('payment')}}"> Procedi al pagamento &dollar; </a>
-            <button type="submit" class="btn btn-outline-info promotions-button"> Attiva &#9745;</button>
+            {{-- <a href="{{route('payment')}}"> Procedi al pagamento &dollar; </a> --}}
+            <button type="submit" class="btn btn-outline-success promotions-button"> Procedi al pagamento &#9745;</button>
         </div>
     </div>
-
 
     <script>
       AOS.init();

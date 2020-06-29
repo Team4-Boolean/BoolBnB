@@ -1,14 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use App\House;
-use App\Promotion;
 use App\Visitor;
 
-class HouseController extends Controller
+class VisitorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +21,20 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $promotions = Promotion::orderBy('price', 'DESC')->paginate(6);
+        // Trovo il collegamento tra creatori delle case e utente loggato
+        $houses = House::where('user_id', Auth::id())->get();
+        // Creo un array per pusshare dentro i miei id
+        $houseId = [];
+
+        foreach ($houses as $house) {
+            $houseId[] = $house['id'];
+         // array_push($houseId, $house['id']);
+        }
+
+        $visitors = Visitor::whereIn('house_id', $houseId)->get();
 
 
-        // $houses = House::all();
-        // $promotions = Promotion::all();
-        return view('guest.index',compact('promotions'));
+        return view('admin.visitors.index', compact('visitors'));
     }
 
     /**
@@ -43,7 +55,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -52,18 +64,9 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-
-        $house = House::findOrFail($id);
-
-        // Salvo nel DB l'ip dei vistatori
-        $user_activity = new Visitor;
-        $user_activity->ip_address=$request->ip();
-        $user_activity->house_id= $house->id;
-        $user_activity->save();
-
-        return view('guest.show', compact('house'));
+        //
     }
 
     /**

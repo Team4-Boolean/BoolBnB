@@ -48,7 +48,13 @@ class House extends Model
 // PROMOTION
     public function promotions()
     {
-        return $this->belongsToMany('App\Promotion');
+        return $this->belongsToMany('App\Promotion')->withTimestamps();
+    }
+
+// VISITATORI
+    public function visitors()
+    {
+        return $this->hasMany('App\Visitor');
     }
 
 }

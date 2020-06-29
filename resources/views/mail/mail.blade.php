@@ -1,3 +1,6 @@
-{{-- INVIA QUESTA MAIL A ME QUANDO QUALCUNO MANDA UN MESSAGGIO AD UN MIO ANNUNCIO --}}
-
-Hai un nuova mail
+{{-- Invia questa mail ad ogni messaggio inviato --}}
+<div class="container-mail-fullwidth">
+    <div class="container-mail-minwidth">
+        <h1> BoolBnB: Hai ricevuto una nuova mail </h1>
+    </div>
+</div>

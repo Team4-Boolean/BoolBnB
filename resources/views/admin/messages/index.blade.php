@@ -4,6 +4,13 @@
 
     </div>
     <div class="offset-1 col-10" style="height: 100vh">
+        <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+               <li class="breadcrumb-item active" aria-current="page">Home</li>
+               <li id="mobile-none" class="breadcrumb-item active" aria-current="page">Messages</li>
+               <li id="mobile-show" class="breadcrumb-item active" aria-current="page"> <a href="#">Messages</a></li>
+           </ol>
+       </nav>
         <div class="container-messages-index">
             <table class="table">
                 <thead style: height= 56px>

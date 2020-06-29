@@ -1,17 +1,14 @@
 //start API
-
-var urlBase = '/api/houses';
-stampa();
-
 function stampa(){
   $.ajax({
-	  url: '/api/houses',
-	  method:'GET',
+	  url: '/api/visitors',
+	  method:'POST',
 	  headers: {
-		  'Authorization': 'Bearer TEST1234'
+		  'Authorization': 'Bearer Pippo123'
 	  },
 	  success:function(data){
-		  console.log(data);
+          var dati = data.data;
+		  console.log(dati);
 	  },
 	  error: function(){
 	  // alert('errore');

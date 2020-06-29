@@ -47793,18 +47793,16 @@ function findBestZoom() {
 /***/ (function(module, exports) {
 
 //start API
-var urlBase = '/api/houses';
-stampa();
-
 function stampa() {
   $.ajax({
-    url: '/api/houses',
-    method: 'GET',
+    url: '/api/visitors',
+    method: 'POST',
     headers: {
-      'Authorization': 'Bearer TEST1234'
+      'Authorization': 'Bearer Pippo123'
     },
     success: function success(data) {
-      console.log(data);
+      var dati = data.data;
+      console.log(dati);
     },
     error: function error() {// alert('errore');
     }
@@ -47830,6 +47828,8 @@ $(document).ready(function () {
   __webpack_require__(/*! ./messages */ "./resources/js/messages.js");
 
   __webpack_require__(/*! ./api */ "./resources/js/api.js");
+
+  __webpack_require__(/*! ./visitors */ "./resources/js/visitors.js");
 
   __webpack_require__(/*! ./angolia */ "./resources/js/angolia.js");
 });
@@ -47909,7 +47909,7 @@ function mes(messages) {
       var houseId = message.house_id; // Se l'id del file blade corrisponde a quello ciclato, allora lo stampo a schermo
 
       if (bladeMessageId == arrayId) {
-        $('.container-left-messages').append('<h5>' + body + '</h5>').css("background-color", "#f2f2f2");
+        $('.container-left-messages').append('<p>' + body + '</p>').css("background-color", "#f2f2f2");
         $('.messages-top-id').append('<h5>' + 'Messaggio riferito al tuo annuncio ID #' + houseId + '</h5>');
       }
     }
@@ -47921,7 +47921,7 @@ function mes(messages) {
 $('.button').click(function () {
   var valueRisp = $('.messages-risp').val();
   $('.messages-risp').val('');
-  $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#f2f2f2");
+  $('.container-right-messages').append('<p>' + valueRisp + '<p>').css("background-color", "#f2f2f2");
 }); // All'inserimento di un testo nell'input, me lo stampa a schermo premendo invio (keyCode 13)
 
 $('.messages-risp').keypress(function (event) {
@@ -47967,6 +47967,80 @@ $(window).scroll(function (e) {
     header.removeClass('shadow');
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/visitors.js":
+/*!**********************************!*\
+  !*** ./resources/js/visitors.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var visitors = $('.container-visitors-js').data('visitors');
+var meseVisitatore = {
+  'gennaio': 0,
+  'febbraio': 0,
+  'marzo': 0,
+  'aprile': 0,
+  'maggio': 0,
+  'giugno': 0,
+  'luglio': 0,
+  'agosto': 0,
+  'settembre': 0,
+  'ottobre': 0,
+  'novembre': 0,
+  'dicembre': 0
+}; //Prendo i mesi per poi popolarli in base alla data
+
+for (var i = 0; i < visitors.length; i++) {
+  var visitor = visitors[i];
+  var valore = visitor.house_id; //Trovo gli id riferiti a quella casa
+
+  var mese = visitor.created_at.substring(0, 10); // Trovo le date (solo le prime 10 cifre)
+
+  var thisMonth = moment(mese, 'YYYY/MM/DD').format("MMMM"); //Trovo solo i MESI dalle date, estrapolo da mese (YYYY/MM/DD), solo i nomi dei mesi .format('MMMM')
+
+  meseVisitatore[thisMonth] += $(valore).length; //Per ogni mese faccio il conto di quante visite ha ricevuto la mia casa
+}
+
+valoriFinali(meseVisitatore); //--------> Porto fuori la mia variabile per ciclare 'for in ' mesi e visitatori <---------
+//Funzione per trovare  i valori finali
+
+function valoriFinali(meseVisitatore) {
+  var labelsChart = []; // Creazione variabile vuota per inserirci le mie date da richiamare poi nella chart
+
+  var dataChart = []; // Creazione variabile vuota per inserirci i miei visitatori da richiamare poi nella chart
+
+  for (var key in meseVisitatore) {
+    labelsChart.push(key);
+    dataChart.push(meseVisitatore[key]);
+  }
+
+  laMiaSomma(labelsChart, dataChart);
+}
+
+; //Assegno i valori finali trovati, alla mia CHART per i valori mensili
+
+function laMiaSomma(labels, data) {
+  var ctx = $('#grafico-visitors');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      //riporto il mio valore del mese
+      datasets: [{
+        label: 'Visite annunci',
+        backgroundColor: '#ff5a5f',
+        borderColor: '#ee3055',
+        data: data //riporto il totale dei miei vistatori
+
+      }]
+    }
+  });
+}
+
+;
 
 /***/ }),
 

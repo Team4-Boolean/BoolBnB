@@ -34,8 +34,7 @@ class MessageController extends Controller
     }
 
     $messages = Message::whereIn('house_id', $houseId)->get();
-
-
+    
     return view('admin.messages.index', compact('messages'));
 
 }

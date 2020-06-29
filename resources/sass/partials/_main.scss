@@ -27,4 +27,14 @@
 // //Import  Auth Login Register
 @import 'authLoginRegister/partials/_main';
 // Import Error  404
-@import 'error/partials/_main';
+@import 'error404/partials/_main';
+// Import Error  403
+@import 'error403/partials/_main';
+// Import Payment
+@import 'payment/partials/_main';
+// Import Checkout
+@import 'checkout/partials/_main';
+// Import Visitors
+@import 'visitors/partials/_main';
+// Import Messages
+@import 'messages/partials/_main';

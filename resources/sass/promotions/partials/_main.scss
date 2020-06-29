@@ -1,6 +1,9 @@
+.container-promotions-empty {
+    height: 100px;
+}
 .container-promotions {
     .promotions-cit {
-        height: 100px;
+        height: 120px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,6 +34,34 @@
         align-items: center;
         .promotions-button {
             margin-left: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .container-promotions {
+        .promotions-cit {
+            h3 {
+                text-align: center;
+                font-size: 25px;
+            }
+        }
+        .form-check {
+            .promotions-title {
+                font-size: 20px;
+            }
+            .container-promotions-big {
+                .container-promotions-small {
+                    .promotions-body {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .promotions-send-button {
+            .promotions-button {
+            }
         }
     }
 }

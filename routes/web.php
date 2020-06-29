@@ -31,6 +31,7 @@ Route::prefix('admin')
     Route::resource('photos', 'PhotoController');
     Route::resource('messages', 'MessageController');
     Route::resource('promotions', 'PromotionController');
+    Route::resource('visitors', 'VisitorController');
 
 });
 

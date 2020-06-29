@@ -15,6 +15,7 @@ use App\Service;
 use App\User;
 use App\Photo;
 use App\Message;
+use App\Visitor;
 
 class HouseController extends Controller
 {
@@ -51,6 +52,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
 
         if(!isset($data['visible'])) {
@@ -99,7 +101,7 @@ class HouseController extends Controller
         }
 
 
-        return redirect()->route('admin.houses.index')->with('status', 'Annuncio pubblicato con successo');
+        return redirect()->route('admin.houses.index', )->with('status', 'Annuncio pubblicato con successo');
     }
 
     /**
@@ -112,11 +114,12 @@ class HouseController extends Controller
     {
         $house = House::findOrFail($id);
 
-        // CONTO I MESSAGGI IN BASE AD OGNI ID STANZA, E POI LI PORTO NELLO SHOW DEL MIO PANNELLO AMMINISTRATORE
         // Quanti messaggi mi sono arrivati in questo annuncio?
         $message = Message::where('house_id', $id)->count();
+        // Quanti utenti hanno visto questo mio annuncio?
+        $visitor = Visitor::where('house_id', $id)->count();
 
-        return view('admin.houses.show', compact('house', 'message'));
+        return view('admin.houses.show', compact('house', 'message', 'visitor'));
     }
 
     /**
@@ -202,17 +205,21 @@ class HouseController extends Controller
 
         $house->services()->detach();
         // Utilizzato per la manytomany
-        // $house->photos()->detach();
+        // $house->photos()->delete();
 
+        // Togli le promo riferite alla casa che andrò ad eliminare
+        $house->services()->detach();
         // Cancella i messaggi di questa casa che andrò ad eliminare
         $house->messages()->delete();
+        // Cancella i visitatori di quella casa
+        $house->visitors()->delete();
         // Cancella la mia casa
         $deleted = $house->delete();
 
         return redirect()->back()->with('status', 'Annuncio cancellato con successo');
     }
 
-    
+
     public function promotions($id)
     {
         $house = House::findOrFail($id);
