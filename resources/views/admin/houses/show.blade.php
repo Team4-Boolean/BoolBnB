@@ -33,13 +33,17 @@
                         <a href="{{route('admin.houses.edit', $house->id)}}" class="list-group-item">
                           Modifica appartamento
                         </a>
-                        <a href="#" class="list-group-item ">Statistiche</a>
                         <a href="{{route('admin.promotions.index', $house->id)}}" class="list-group-item ">Attiva una promozione</a>
                         <a href="{{route('admin.photos.show', $house->id)}}" class="list-group-item ">Modifica Foto</a>
-                        <a href="{{route('admin.messages.index', $house->id)}}" class="list-group-item d-flex justify-content-between align-items-center">
+                        <a class="list-group-item d-flex justify-content-between align-items-center">
                             Messaggi ricevuti
                             <span class="badge badge-primary badge-pill">{{$message}}</span>
                         </a>
+                        <a class="list-group-item d-flex justify-content-between align-items-center">
+                            Visitatori
+                            <span class="badge badge-primary badge-pill">{{$visitor}}</span>
+                        </a>
+
                     </div>
                 </div>
             </div>

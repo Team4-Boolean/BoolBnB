@@ -26,7 +26,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::where('user_id', '=', Auth::id())->get();
+        $houses = House::where('user_id', '=', Auth::id())->paginate(6);
         // \Auth::user()
 
         return view('admin.houses.index',compact('houses'));

@@ -49,3 +49,5 @@ Route::get('/payment', function () {
 Route::get('/checkout', 'PaymentsController@process')->name('check');
 
 Route::post('/payment/process', 'PaymentsController@store')->name('payment.process');
+
+Route::get('/houses/search', 'SearchController@index')->name('search.index');

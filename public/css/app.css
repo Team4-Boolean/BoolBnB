@@ -11501,14 +11501,13 @@ a.text-dark:focus {
 .container-adminHousesShow {
   position: relative;
   min-height: 1200px;
+  padding-top: 100px;
 }
 
 .container-adminHousesShow .card-ahs {
+  margin: auto;
+  display: block;
   background-color: white;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 70%;
   padding: 20px;
   border-radius: 5px;
@@ -11548,7 +11547,7 @@ a.text-dark:focus {
 }
 
 .container-welcome-empty {
-  height: 70px;
+  height: 65px;
 }
 
 .container-welcome-top {
@@ -11691,24 +11690,29 @@ a.text-dark:focus {
 }
 
 .container-home-index {
-  margin-top: 70px;
-  background-color: #e6e6e6;
+  margin-top: 65px;
+  background-image: url("https://a1.muscache.com/airbnb/myairbnb/assets/social_share/large_airbnb_logo-33ef1bceaba29691adccab219d3a3dcf.png");
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.title-home-index {
-  text-align: center;
-}
-
-.title-home-index h2 {
-  color: #ff385c;
-}
-
-.centered {
+.container-home-index .centered {
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 30px 0;
 }
 
-.cards-home-index {
+.container-home-index .centered .title-home-index {
+  text-align: center;
+  background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.container-home-index .centered .title-home-index h2 {
+  color: white;
+}
+
+.container-home-index .centered .cards-home-index {
   display: flex;
   flex-wrap: wrap;
   color: #404040;
@@ -11717,44 +11721,40 @@ a.text-dark:focus {
   line-height: 1.5;
 }
 
-p {
-  margin-bottom: 1.5em;
-  color: #898989;
-}
-
-img {
-  display: block;
-  border: 0;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-}
-
-.card-home-index {
+.container-home-index .centered .cards-home-index .card-home-index {
   background: white;
   margin-bottom: 2em;
   margin: 1rem 0.25em;
-  box-shadow: 10px 10px 5px 0px #858385;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px #fc5c5d;
 }
 
-.card-home-index a {
+.container-home-index .centered .cards-home-index .card-home-index a {
   color: black;
   text-decoration: none;
 }
 
-.card-content {
+.container-home-index .centered .cards-home-index .card-home-index a img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto;
+  padding: 3px;
+}
+
+.container-home-index .centered .cards-home-index .card-home-index a .card-content {
   padding: 1.4em;
 }
 
-.card-content h2 {
+.container-home-index .centered .cards-home-index .card-home-index a .card-content h2 {
   margin-top: 0;
   margin-bottom: 0.5em;
   font-weight: bold;
   font-size: 1rem;
-  color: blue;
+  color: #fc5c5d;
 }
 
-.card-content p {
+.container-home-index .centered .cards-home-index .card-home-index a .card-content p {
   font-size: 80%;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -11762,6 +11762,8 @@ img {
   -webkit-line-clamp: 2;
   /* number of lines to show */
   -webkit-box-orient: vertical;
+  margin-bottom: 1.5em;
+  color: #898989;
 }
 
 @media screen and (min-width: 30em) {
@@ -11896,90 +11898,168 @@ img {
   }
 }
 
-.container-home-index {
-  margin-top: 70px;
-  background-color: #e6e6e6;
+.container-GuestShowHouse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.title-home-index {
+.container-GuestShowHouse .card-gsh {
+  width: 80%;
+  padding-top: 100px;
+  background-color: white;
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-GuestShowHouse .card-gsh .house-photos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-photos .img {
+  position: relative;
+  margin-bottom: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 500px;
+}
+
+.container-GuestShowHouse .card-gsh .separe {
+  border: 1px solid lightgray;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-desc {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-desc p {
+  color: black;
+}
+
+.container-GuestShowHouse .card-gsh .house-services {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-GuestShowHouse .card-gsh .house-services li {
+  list-style: none;
+  display: inline;
+  margin-right: 20px;
+  text-transform: capitalize;
+}
+
+.container-GuestShowHouse .card-gsh .house-services li i {
+  color: #ff5a5f;
+  margin-right: 7px;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .house-contact {
+  width: 50%;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .maps {
+  display: block;
+  width: 50%;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .maps #map-example-container {
+  height: 400px;
+  width: 100%;
+}
+
+.container-GuestShowHouse .card-gsh .house-footer .maps .search-hidden {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .container-GuestShowHouse .card-gsh .house-photos .img {
+    height: auto;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer {
+    display: block;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer .house-contact {
+    width: 100%;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer .maps {
+    display: block;
+    width: 100%;
+  }
+
+  .container-GuestShowHouse .card-gsh .house-footer .maps #map-example-container {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.container-home-index .centered .search-view-filters {
+  margin-top: 30px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.container-home-index .centered .search-view-filters a {
+  color: white;
+  background-color: #fc5c5d;
+  margin-left: 5px;
+}
+
+.container-home-index .centered .search-view-filters .tab-content {
+  margin: 10px;
+}
+
+.container-home-index .centered .search-view-filters .tab-content .tab-pane {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.container-home-index .centered .search-view-filters .tab-content .tab-pane label {
+  display: block;
+  color: #fc5c5d;
   text-align: center;
 }
 
-.title-home-index h2 {
-  color: #ff385c;
+.container-home-index .centered .search-view-filters .tab-content .tab-pane input {
+  flex: 0.7 auto;
 }
 
-.centered {
-  margin: 0 auto;
-  padding: 0 1em;
+.container-home-index .centered .search-view-filters .tab-content .tab-pane .input-group {
+  justify-content: center;
 }
 
-.cards-home-index {
-  display: flex;
-  flex-wrap: wrap;
-  color: #404040;
-  font-family: "Comfortaa", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
+.container-home-index .centered .search-view-filters .tab-content .tab-pane .input-group-append,
+.container-home-index .centered .search-view-filters .tab-content .tab-pane .input-group-prepend {
+  background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
 }
 
-p {
-  margin-bottom: 1.5em;
-  color: #898989;
+.container-home-index .centered .search-view-filters .tab-content .tab-pane .input-group-append strong,
+.container-home-index .centered .search-view-filters .tab-content .tab-pane .input-group-prepend strong {
+  color: white;
 }
 
-img {
-  display: block;
-  border: 0;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-}
-
-.card-home-index {
-  background: white;
-  margin-bottom: 2em;
-  margin: 1rem 0.25em;
-  box-shadow: 10px 10px 5px 0px #858385;
-}
-
-.card-home-index a {
-  color: black;
-  text-decoration: none;
-}
-
-.card-content {
-  padding: 1.4em;
-}
-
-.card-content h2 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  font-size: 1rem;
-  color: blue;
-}
-
-.card-content p {
-  font-size: 80%;
-}
-
-@media screen and (min-width: 30em) {
-  .card-home-index {
-    max-width: calc(50% - 1em);
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .card-home-index {
-    max-width: calc(25% - 1em);
-  }
-}
-
-@media screen and (min-width: 52em) {
-  .centered {
-    max-width: 52em;
-  }
+.container-home-index.chi-search .centered {
+  padding: 15px 0;
 }
 
 .container-AdminPhotosIndex {
@@ -12119,6 +12199,8 @@ img {
 }
 
 .card-container-CreateHouses {
+  background-image: url("https://homehost.com.au/wp-content/uploads/2018/06/airbnb-1125x750.jpg");
+  background-repeat: repeat;
   margin-bottom: 25px;
 }
 

@@ -32,13 +32,13 @@ class SearchController extends Controller
 
         $houses = DB::select(DB::raw('SELECT *, ( '. $circle_radius .' * acos( cos( radians(' . $lat . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $log . ') ) + sin( radians(' . $lat .') ) * sin( radians(latitude) ) ) ) AS distance FROM houses WHERE visible=1 HAVING distance < ' . $radius . ' ORDER BY distance') );
 
-        foreach ($houses as $key => $house) {
-            foreach ($house->services as $key => $service) {
-                dd($service);
-                $house['services'] = $house->services;
-            }
-
-        };
+        // foreach ($houses as $key => $house) {
+        //     foreach ($house->services as $key => $service) {
+        //         dd($service);
+        //         $house['services'] = $house->services;
+        //     }
+        //
+        // };
 
         $promotions = Promotion::orderBy('price', 'DESC')->paginate(6);
         return view('guest.search',compact('promotions','houses','radius','services'));
