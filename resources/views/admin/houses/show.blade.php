@@ -40,10 +40,6 @@
                             Messaggi ricevuti
                             <span class="badge badge-primary badge-pill">{{$message}}</span>
                         </a>
-                        <a class="list-group-item d-flex justify-content-between align-items-center">
-                            Visitatori
-                            <span class="badge badge-primary badge-pill">{{$visitor}}</span>
-                        </a>
                     </div>
                 </div>
             </div>

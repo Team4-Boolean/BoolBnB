@@ -1,12 +1,11 @@
 .container-adminHousesShow {
 	position: relative;
 	min-height: 1200px;
+	padding-top: 100px;
 	.card-ahs {
+		margin: auto;
+		display: block;
 		background-color: white;
-		position: absolute;
-		top: 40%;
-		left: 50%;
-		transform: translate(-50%,-50%);
 		width: 70%;
 		padding: 20px;
 		border-radius: 5px;

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\House;
 use App\Promotion;
-use App\Visitor;
 
 class HouseController extends Controller
 {
@@ -17,8 +16,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $promotions = Promotion::orderBy('price', 'DESC')->paginate(6);
-
+        $promotions = Promotion::orderBy('price', 'DESC')->limit(6)->get();
 
         // $houses = House::all();
         // $promotions = Promotion::all();
@@ -43,7 +41,15 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        // dd($data['latitude']);
+        // Str::of(($data['longitude'],$data['latitude'])->slug('-');
 
+        $lat = $data['latitude'];
+        $log = $data['longitude'];
+        $radius = 20;
+
+        return redirect()->route('search.index',compact('lat','log','radius'));
     }
 
     /**
@@ -52,16 +58,9 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-
         $house = House::findOrFail($id);
-
-        // Salvo nel DB l'ip dei vistatori
-        $user_activity = new Visitor;
-        $user_activity->ip_address=$request->ip();
-        $user_activity->house_id= $house->id;
-        $user_activity->save();
 
         return view('guest.show', compact('house'));
     }

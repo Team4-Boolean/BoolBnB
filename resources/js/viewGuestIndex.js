@@ -9,3 +9,9 @@ $(window).scroll(function(e){
         header.removeClass('shadow');
     }
 });
+
+$('#address-btn-index').keypress(function(event){
+    if (event.keyCode == 13) {
+        $('.searchs').submit();
+    };
+});

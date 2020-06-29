@@ -5,7 +5,7 @@
             <ol class="breadcrumb custom-nav">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{route('admin.houses.index')}}">Le tue case</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                <li class="breadcrumb-item active" aria-current="page">Crea il tuo annuncio</li>
             </ol>
         </nav>
     </div>
@@ -100,8 +100,8 @@
                             </style>
                         </div>
                         <div class="form-group card-custom">
-                                <label for="input-map">Indirizzo</label>
-                                <input class="form-control" type="search" id="input-map" name="address" placeholder="Dove vuoi andare?"> </input>
+                                <label for="address">Indirizzo</label>
+                                <input class="form-control" type="search" id="address" name="address" placeholder="Dove vuoi andare?"> </input>
                             @error('address')
                                 <span class='alert alert-danger'>
                                     {{$message}}

@@ -2,8 +2,11 @@ require('./bootstrap');
 
 $(document).ready(function () {
 require('./viewGuestIndex');
+require('./viewGuestSearch');
 require('./messages');
 require('./api');
-require('./visitors');
+require('./slider');
 require('./angolia');
+
+
 });
