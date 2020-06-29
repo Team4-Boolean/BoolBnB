@@ -51,7 +51,7 @@
                 <h4>Servizi</h4>
                 <ul>
                     @foreach ($house->services as $service)
-                        <li><i class="fas fa-check-circle"></i>{{$service->name}}</li>
+                        <li><i class="fas fa-check-circle"></i>{{$service->name}} {!!$service->service_icon!!}</li>
                     @endforeach
                 </ul>
             </div>

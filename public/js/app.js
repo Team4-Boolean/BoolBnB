@@ -53318,8 +53318,6 @@ function houseSearch() {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 $(document).ready(function () {
-  __webpack_require__(/*! ./visitors */ "./resources/js/visitors.js");
-
   __webpack_require__(/*! ./viewGuestIndex */ "./resources/js/viewGuestIndex.js");
 
   __webpack_require__(/*! ./viewGuestSearch */ "./resources/js/viewGuestSearch.js");
@@ -53331,6 +53329,8 @@ $(document).ready(function () {
   __webpack_require__(/*! ./slider */ "./resources/js/slider.js");
 
   __webpack_require__(/*! ./angolia */ "./resources/js/angolia.js");
+
+  __webpack_require__(/*! ./visitors */ "./resources/js/visitors.js");
 });
 
 /***/ }),
@@ -53420,14 +53420,14 @@ function mes(messages) {
 $('.button').click(function () {
   var valueRisp = $('.messages-risp').val();
   $('.messages-risp').val('');
-  $('.container-right-messages').append('<p>' + valueRisp + '<p>').css("background-color", "#f2f2f2");
+  $('.container-right-messages').append('<p>' + valueRisp + '</p>').css("background-color", "#f2f2f2");
 }); // All'inserimento di un testo nell'input, me lo stampa a schermo premendo invio (keyCode 13)
 
 $('.messages-risp').keypress(function (event) {
   if (event.keyCode == 13) {
     var valueRisp = $('.messages-risp').val();
     $('.messages-risp').val('');
-    $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#f2f2f2");
+    $('.container-right-messages').append('<p>' + valueRisp + '</p>').css("background-color", "#f2f2f2");
   }
 }); // Only small iphone view
 
@@ -53602,8 +53602,8 @@ function laMiaSomma(labels, data) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/Boolean/Esercizi php/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/Boolean/Esercizi php/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

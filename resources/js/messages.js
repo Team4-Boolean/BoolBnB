@@ -33,7 +33,7 @@
     $('.button').click(function() {
         var valueRisp = $('.messages-risp').val();
         $('.messages-risp').val('');
-        $('.container-right-messages').append('<p>' + valueRisp + '<p>').css("background-color", "#f2f2f2");
+        $('.container-right-messages').append('<p>' + valueRisp + '</p>').css("background-color", "#f2f2f2");
     });
 
     // All'inserimento di un testo nell'input, me lo stampa a schermo premendo invio (keyCode 13)
@@ -41,7 +41,7 @@
         if (event.keyCode == 13) {
             var valueRisp = $('.messages-risp').val();
             $('.messages-risp').val('');
-            $('.container-right-messages').append('<h4>' + valueRisp + '</h4>').css("background-color", "#f2f2f2");
+            $('.container-right-messages').append('<p>' + valueRisp + '</p>').css("background-color", "#f2f2f2");
         }
     });
 

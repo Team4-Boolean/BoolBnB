@@ -141,7 +141,7 @@
                             <div class="form-check form-check-inline card-custom">
                                 <input class="form-check-input"  type="checkbox" name="services[]" id="service{{$service->id}}" value="{{$service->id}}"
                                   {{((is_array(old('services')) && in_array($service->id, old('services'))) || $house->services->contains($service->id)) ? 'checked' : ''}}>
-                                  <label class="form-check-label" for="service{{$service->id}}">{{$service->name}}</label>
+                                  <label class="form-check-label" for="service{{$service->id}}">{{$service->name}} {!!$service->service_icon!!}</label>
                             </div>
                         </div>
                         @endforeach

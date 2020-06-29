@@ -18,10 +18,10 @@
                         <p class="card-text">{{$house->description}}</p>
                         <a class="btn btn-primary" href="{{route('admin.houses.show', $house->id)}}">Visualizza</a>
                         <a class="btn btn-secondary" href="{{route('admin.houses.edit', $house->id)}}">Modifica</a>
-                        <form action="{{route('admin.houses.destroy', $house->id)}}" method="POST">
+                        <form action="{{route('admin.houses.destroy', $house->id)}}" method="POST" style="display: inline-block" >
                             @csrf
                             @method('DELETE')
-                        <input class="btn btn-danger" type="submit" value="Elimina">
+                        <input class="btn btn-danger"type="submit" value="Elimina">
                      </form>
                     </div>
                 @endif

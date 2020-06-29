@@ -11738,7 +11738,7 @@ a.text-dark:focus {
   display: block;
   border: 0;
   width: 100%;
-  height: auto;
+  height: 200px;
   padding: 3px;
 }
 
@@ -11809,6 +11809,7 @@ a.text-dark:focus {
 }
 
 .container-GuestShowHouse .card-gsh .house-photos .img {
+  width: 100%;
   position: relative;
   margin-bottom: 25px;
   -o-object-fit: cover;
@@ -11923,6 +11924,7 @@ a.text-dark:focus {
 }
 
 .container-GuestShowHouse .card-gsh .house-photos .img {
+  width: 100%;
   position: relative;
   margin-bottom: 25px;
   -o-object-fit: cover;
@@ -12222,11 +12224,11 @@ a.text-dark:focus {
      object-fit: cover;
 }
 
-.card-body {
+.card-body-admin-index {
   padding-bottom: 30px;
 }
 
-.card-body form {
+.card-body-admin-index form {
   width: 77px;
   display: inline-block;
 }

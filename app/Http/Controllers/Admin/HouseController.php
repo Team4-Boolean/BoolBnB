@@ -205,7 +205,7 @@ class HouseController extends Controller
 
         $house->services()->detach();
         // Utilizzato per la manytomany
-        // $house->photos()->delete();
+        $house->photos()->delete();
 
         // Togli le promo riferite alla casa che andrò ad eliminare
         $house->services()->detach();
@@ -213,6 +213,8 @@ class HouseController extends Controller
         $house->messages()->delete();
         // Cancella i visitatori di quella casa
         $house->visitors()->delete();
+        // Cancella le promo per quella casa
+        $house->promotions()->detach();
         // Cancella la mia casa
         $deleted = $house->delete();
 

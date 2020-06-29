@@ -5,8 +5,8 @@
   <div id="app">
       <ul class="menu">
           <li><a href="{{route('houses.index')}}">Cerca un appartamento</a></li>
-          <li><a href="{{route('login')}}">Accedi</a></li>
-          <li><a href="{{route('register')}}">Registrati</a></li>
+          {{-- <li><a href="{{route('login')}}">Accedi</a></li>
+          <li><a href="{{route('register')}}">Registrati</a></li> --}}
           @guest
           <li class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
