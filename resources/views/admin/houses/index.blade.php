@@ -5,6 +5,10 @@
                 <li class="list-group-item col-6"><h3><a href="{{route('admin.promotions.index')}}">Sponsorizza una casa</a></h3></li>
                 <li class="list-group-item col-6"><h3><a href="{{route('admin.houses.create')}}">Inserisci una nuova casa</a></h3></li>
             </ul>
+            <ul id="sec" class="list-group list-group-horizontal ">
+                <li class="list-group-item col-6"><h3><a href="{{route('admin.messages.index')}}">Visualizza i messaggi ricevuti</a></h3></li>
+                <li class="list-group-item col-6"><h3><a href="{{route('admin.visitors.index')}}">Statistiche</a></h3></li>
+            </ul>
             <div class="card mb-5">
                 @foreach ($houses as $key => $house)
                 @if(Auth::id() == $house->user_id)

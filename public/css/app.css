@@ -12190,6 +12190,47 @@ a.text-dark:focus {
   margin-bottom: 40px;
 }
 
+.list-group-horizontal {
+  margin-top: 65px;
+}
+
+.list-group-horizontal .col-6 {
+  margin: 20px 0;
+  background-color: #fc5c5d;
+}
+
+.list-group-horizontal .col-6:hover {
+  background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+}
+
+.list-group-horizontal h3 {
+  text-align: center;
+}
+
+.list-group-horizontal h3 a {
+  text-decoration: none;
+  color: white;
+}
+
+#sec {
+  margin: 0;
+}
+
+.card-img-top {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-body {
+  padding-bottom: 30px;
+}
+
+.card-body form {
+  width: 77px;
+  display: inline-block;
+}
+
 .custom-margin {
   margin-top: 75px;
 }
@@ -12210,6 +12251,36 @@ a.text-dark:focus {
 
 .card-container-CreateHouses .card-custom {
   padding: 0 10px;
+}
+
+.container-adminHousesEdit {
+  min-height: 1600px;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.container-adminHousesEdit nav {
+  width: 70%;
+}
+
+.container-adminHousesEdit .card-ahe {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: 0.95;
+}
+
+.container-adminHousesEdit .card-ahe img {
+  width: 200px;
+  height: 150px;
 }
 
 .card-container-AuthLoginRegister {

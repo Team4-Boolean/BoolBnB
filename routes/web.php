@@ -35,6 +35,8 @@ Route::prefix('admin')
 
 });
 
+Route::get('/houses/search', 'SearchController@index')->name('search.index');
+
 Route::resource('houses', 'HouseController');
 
 //Save message
@@ -49,5 +51,3 @@ Route::get('/payment', function () {
 Route::get('/checkout', 'PaymentsController@process')->name('check');
 
 Route::post('/payment/process', 'PaymentsController@store')->name('payment.process');
-
-Route::get('/houses/search', 'SearchController@index')->name('search.index');

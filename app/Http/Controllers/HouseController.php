@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\House;
 use App\Promotion;
+use App\Visitor;
 
 class HouseController extends Controller
 {
@@ -58,9 +59,15 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $house = House::findOrFail($id);
+
+        // Salvo nel DB l'ip dei vistatori
+       $user_activity = new Visitor;
+       $user_activity->ip_address=$request->ip();
+       $user_activity->house_id= $house->id;
+       $user_activity->save();
 
         return view('guest.show', compact('house'));
     }

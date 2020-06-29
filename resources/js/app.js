@@ -1,6 +1,7 @@
 require('./bootstrap');
 
 $(document).ready(function () {
+require('./visitors');
 require('./viewGuestIndex');
 require('./viewGuestSearch');
 require('./messages');
