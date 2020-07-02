@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 
 @section('content')
 <div class="container card-container-AuthLoginRegister">

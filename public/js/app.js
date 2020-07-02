@@ -53318,11 +53318,11 @@ function houseSearch() {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 $(document).ready(function () {
+  __webpack_require__(/*! ./messages */ "./resources/js/messages.js");
+
   __webpack_require__(/*! ./viewGuestIndex */ "./resources/js/viewGuestIndex.js");
 
   __webpack_require__(/*! ./viewGuestSearch */ "./resources/js/viewGuestSearch.js");
-
-  __webpack_require__(/*! ./messages */ "./resources/js/messages.js");
 
   __webpack_require__(/*! ./api */ "./resources/js/api.js");
 
@@ -53412,6 +53412,8 @@ function mes(messages) {
         $('.messages-top-id').append('<h5>' + 'Messaggio riferito al tuo annuncio ID #' + houseId + '</h5>');
       }
     }
+
+    ;
   });
 }
 

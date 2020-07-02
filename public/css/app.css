@@ -11610,7 +11610,8 @@ a.text-dark:focus {
 
 @media screen and (max-width: 767px) {
   .container-welcome-center .container-welcome-hello h1 {
-    font-size: 30px;
+    text-align: center;
+    font-size: 27px;
   }
 
   .container-welcome-center .container-welcome-hello h4 {
@@ -12233,6 +12234,35 @@ a.text-dark:focus {
   display: inline-block;
 }
 
+@media screen and (max-width: 767px) {
+  .list-group-horizontal {
+    margin-top: 65px;
+  }
+
+  .list-group-horizontal .col-6 {
+    margin: 20px 0;
+    background-color: #fc5c5d;
+  }
+
+  .list-group-horizontal .col-6:hover {
+    background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+  }
+
+  .list-group-horizontal h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .list-group-horizontal h3 a {
+    text-decoration: none;
+    color: white;
+  }
+
+  #sec {
+    margin: 0;
+  }
+}
+
 .custom-margin {
   margin-top: 75px;
 }
@@ -12513,7 +12543,7 @@ a.text-dark:focus {
 @media screen and (max-width: 767px) {
   .container-payment-maxwidth .container-payment-form h4 {
     text-align: center;
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .container-payment-maxwidth .container-payment-form h2 {

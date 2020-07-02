@@ -6,7 +6,7 @@
               @csrf
               @method('POST')
         <form>
-        <div class="input-group col-10">
+        <div class="input-group col-8">
               <input class="" type="search" id="address" name="address" value="" placeholder="Dove vuoi andare?"> </input>
         </div>
         <div class="input-group col-2">

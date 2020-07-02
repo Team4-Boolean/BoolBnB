@@ -20,12 +20,13 @@
                 var arrayId = message.id;
                 var body = message.body;
                 var houseId = message.house_id;
+
                 // Se l'id del file blade corrisponde a quello ciclato, allora lo stampo a schermo
                 if (bladeMessageId == arrayId) {
                     $('.container-left-messages').append('<p>' + body + '</p>').css("background-color", "#f2f2f2");
                     $('.messages-top-id').append('<h5>' + 'Messaggio riferito al tuo annuncio ID #' + houseId + '</h5>')
                 }
-            }
+            };
         });
     };
 

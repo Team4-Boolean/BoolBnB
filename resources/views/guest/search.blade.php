@@ -6,10 +6,10 @@
               @csrf
               @method('POST')
         <form>
-        <div class="input-group col-10">
+        <div class="input-group col-8">
               <input class="" type="search" id="address" value="" name="address" placeholder="Dove vuoi andare?"></input>
         </div>
-        <div class="input-group col-2">
+        <div class="input-group col-3">
           <button type="button" id="tasto" class="btn btn-primary">Cerca</button>
         </div>
         {{-- LONG --}}
