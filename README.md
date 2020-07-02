@@ -21,13 +21,13 @@ Su BoolBnB troverà l'appartamento adatto ad ogni tua esigenza.
 ## Installazione in locale
 
 - Download del progetto Laravel;
-- Copiare file env.example e rinominarlo .env;
-- Settare nel file .env i dati per la connessione al DB;
 - Lanciare il comando composer update;
+- Duplicare il file env.example e rinominarlo .env;
+- Settare nel file .env i dati per la connessione al DB;
 - Generare app_key (in seguito fare un dump-autoload);
 - Creare su DB le migration e inserire i seeds;
-- Installare NPM e compilare i SASS con run dev/watch;
-- Installare tramite npm handlebars,places.js e bootstrap-input-spinner.
+- Installare tramite npm handlebars,places.js e bootstrap-input-spinner;
+- Compilare i SASS con run dev/watch.
 
 ## BoolBnB Project
 
