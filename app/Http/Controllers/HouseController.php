@@ -17,11 +17,13 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $promotions = Promotion::orderBy('price', 'DESC')->limit(6)->get();
-
+        $promotions = Promotion::orderBy('price', 'DESC')->get();
+        foreach ($promotions as $key => $promotion) {
+            $houses= $promotion->houses()->where('visible', '1')->limit(8)->get();
+        };
         // $houses = House::all();
         // $promotions = Promotion::all();
-        return view('guest.index',compact('promotions'));
+        return view('guest.index',compact('houses'));
     }
 
     /**
@@ -45,12 +47,11 @@ class HouseController extends Controller
         $data = $request->all();
         // dd($data['latitude']);
         // Str::of(($data['longitude'],$data['latitude'])->slug('-');
-
         $lat = $data['latitude'];
         $log = $data['longitude'];
         $radius = 20;
 
-        return redirect()->route('search.index',compact('lat','log','radius'));
+        return redirect()->route('search.index',compact('lat','log','radius'))->withInput();
     }
 
     /**

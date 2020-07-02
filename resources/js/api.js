@@ -42,17 +42,18 @@ $("#myRange").on("input", function(e) {
          url: '/api/houses/' + lat  + '/' + log + '/' + radius ,
          method:'GET',
          headers: {
-             'Authorization': 'Bearer TEST1234'
+             'Authorization': 'Bearer test1234'
          },
          success:function(data){
-            console.log(data);
+            if (data.data.length != 0) {
+                $('.title-home-index.searchs-s').show();
+            } else {
+                $('.title-home-index.searchs-s').hide();
+            }
             var results = data.data;
+            console.log(results);
             var cardPosition = '#js-cards';
             appendCard(results,cardPosition);
-             // var search = $(location).attr('search');
-             // var searchParams = new URLSearchParams(search);
-             // searchParams.set("log", log);
-             // searchParams.set("lat", lat);
          },
          error: function(){
          // alert('errore');
@@ -71,13 +72,7 @@ $("#myRange").on("input", function(e) {
 
 function searches() {
     $('#js-cards').children().remove(); // reset search
-    var searchBData = $('#address').val();
-    console.log(searchBData);
-    if (searchBData.length !== 0) {
-        houseSearch()
-    } else {
-        alert('Write something');
-    };
+    houseSearch()
 };
 
 
@@ -85,7 +80,6 @@ function houseSearch() {
     var log = $("#longitude").val();
     var lat = $("#latitude").val();
     var radius = $("#myRange").val();
-    console.log(radius);
     stampa(lat,log,radius);
 };
 

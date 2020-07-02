@@ -8,17 +8,11 @@ if (document.getElementById("address")) {
       container: document.querySelector('#address'),
     })
 
-    placesAutocomplete.on('change', function(e) {
-       console.log(e.suggestion);
-
-    });
-
-    console.log(placesAutocomplete);
-
     placesAutocomplete.on('change', function resultSelected(e) {
      document.querySelector('#latitude').value = e.suggestion.latlng.lat || '';
      document.querySelector('#longitude').value = e.suggestion.latlng.lng || '';
     });
+
 
     // End Angolia search
 

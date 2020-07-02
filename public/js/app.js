@@ -53103,10 +53103,6 @@ if (document.getElementById("address")) {
     apiKey: '61a6ce694b1ac511d9482961428abdf1',
     container: document.querySelector('#address')
   });
-  placesAutocomplete.on('change', function (e) {
-    console.log(e.suggestion);
-  });
-  console.log(placesAutocomplete);
   placesAutocomplete.on('change', function resultSelected(e) {
     document.querySelector('#latitude').value = e.suggestion.latlng.lat || '';
     document.querySelector('#longitude').value = e.suggestion.latlng.lng || '';
@@ -53241,16 +53237,19 @@ function stampa(lat, log, radius) {
     url: '/api/houses/' + lat + '/' + log + '/' + radius,
     method: 'GET',
     headers: {
-      'Authorization': 'Bearer TEST1234'
+      'Authorization': 'Bearer test1234'
     },
     success: function success(data) {
-      console.log(data);
+      if (data.data.length != 0) {
+        $('.title-home-index.searchs-s').show();
+      } else {
+        $('.title-home-index.searchs-s').hide();
+      }
+
       var results = data.data;
+      console.log(results);
       var cardPosition = '#js-cards';
-      appendCard(results, cardPosition); // var search = $(location).attr('search');
-      // var searchParams = new URLSearchParams(search);
-      // searchParams.set("log", log);
-      // searchParams.set("lat", lat);
+      appendCard(results, cardPosition);
     },
     error: function error() {// alert('errore');
     }
@@ -53282,16 +53281,7 @@ function appendCard(arrays, position) {
 function searches() {
   $('#js-cards').children().remove(); // reset search
 
-  var searchBData = $('#address').val();
-  console.log(searchBData);
-
-  if (searchBData.length !== 0) {
-    houseSearch();
-  } else {
-    alert('Write something');
-  }
-
-  ;
+  houseSearch();
 }
 
 ;
@@ -53300,7 +53290,6 @@ function houseSearch() {
   var log = $("#longitude").val();
   var lat = $("#latitude").val();
   var radius = $("#myRange").val();
-  console.log(radius);
   stampa(lat, log, radius);
 }
 
@@ -53506,6 +53495,14 @@ $('#address-btn-index').keypress(function (event) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // bootstrap-input-inputSpinner
+if (document.getElementById("js-cards")) {
+  if ($('#js-cards').html() == 0) {
+    $('.title-home-index.searchs-s').hide();
+  }
+
+  ;
+}
+
 __webpack_require__(/*! bootstrap-input-spinner */ "./node_modules/bootstrap-input-spinner/src/bootstrap-input-spinner.js");
 
 $("input[type='number']").inputSpinner();
@@ -53604,8 +53601,8 @@ function laMiaSomma(labels, data) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/Boolean/Esercizi php/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/Boolean/Esercizi php/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /mnt/c/MAMP/htdocs/Boolean/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

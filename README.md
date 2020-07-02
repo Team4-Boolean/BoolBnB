@@ -14,13 +14,24 @@ Attraverso BoolBnB i proprietari di apparatamenti possono inserire le informazio
 - Permettere ai visitatori di scrivere al proprietario di un appartamento per chiedere informazioni	.
 - Permettere ai proprietari di appartamento registrati di vedere le richieste ricevute.
 - Permettere ai proprietari di appartamento registrati di vedere statistiche riguardo gli annunci dei propri appartamenti.
-- Permettere ai proprietari di appartamento registrati di sponsorizzare il propria appartamento	
+- Permettere ai proprietari di appartamento registrati di sponsorizzare il propria appartamento
 
 Su BoolBnB troverà l'appartamento adatto ad ogni tua esigenza.
 
+## Installazione in locale
+
+- Download del progetto Laravel
+- Copiare file env.example e rinominarlo .env;
+- Settare nel file .env i dati per la connessione al DB;
+- Lanciare il comando composer update;
+- Generare app_key (in seguito fare un dump-autoload);
+- Creare su DB le migration e inserire i seeds;
+- Installare NPM e compilare i SASS con run dev/watch
+- Installare tramite npm handlebars,places.js e bootstrap-input-spinner
+
 ## BoolBnB Project
 
-Per progettare il tutto, il team si è avvalso dell'utilizzo di piattaforme come 
+Per progettare il tutto, il team si è avvalso dell'utilizzo di piattaforme come
 
 <h4 align="center"> GitHub Teams </h4>
 
@@ -31,16 +42,16 @@ Per progettare il tutto, il team si è avvalso dell'utilizzo di piattaforme come
 
 <p align="center">
 <a href="https://discord.com"><img src="https://discord.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" alt="Discord" width="170"></a>
-  
+
 <p align="center"> Laravel </p>
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="350"></p>
-  
+
 <h4 align="center"> Atom </h4>
 
 <p align="center">
 <a href="https://atom.io"><img src="https://aws1.discourse-cdn.com/business6/uploads/github_atom/original/3X/9/1/91cdcb0091c80a4ad6d74746fa4aec054f2278bc.png" alt="Atom" width="250"></a>
-  
+
 ## Made by **[Team #4](https://github.com/orgs/Team4-Boolean/teams/team4)** with love
 
 L'intero sitò è stato progettato dai seguenti componenti, visonabili anche tramite profilo GitHub

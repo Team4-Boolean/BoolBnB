@@ -12,7 +12,7 @@
     <div class="card-container-CreateHouses">
         <div class="">
                 <div class="row justify-content-center">
-                    <div class="bg-light card w-50">
+                    <div class="bg-light card w-75">
                         <form class="" action="{{route('admin.houses.store')}}"  method="post" enctype="multipart/form-data">
                             @csrf
                             @method('POST')

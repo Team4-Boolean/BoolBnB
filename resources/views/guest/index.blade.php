@@ -26,20 +26,18 @@
             <h2>Appartamenti in evidenza</h2>
         </div>
         <section class="cards-home-index">
-            @foreach ($promotions as $key => $promotion)
-                @foreach ($promotion->houses as $house)
-                    <div class="card-home-index">
-                        <a href="{{route('houses.show', $house->id)}}">
-                            <picture class="thumbnail">
-                                <img src="{{asset('storage/' .$house->photo)}}">
-                            </picture>
-                            <div class="card-content">
-                                <h2>{{$house->title}}</h2>
-                                <p>{{$house->description}}</p>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
+            @foreach ($houses as $key => $house)
+                <div class="card-home-index">
+                    <a href="{{route('houses.show', $house->id)}}">
+                        <picture class="thumbnail">
+                            <img src="{{asset('storage/' .$house->photo)}}">
+                        </picture>
+                        <div class="card-content">
+                            <h2>{{$house->title}}</h2>
+                            <p>{{$house->description}}</p>
+                        </div>
+                    </a>
+                </div>
             @endforeach
         </section>
     </div>

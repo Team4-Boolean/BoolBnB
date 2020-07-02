@@ -7,18 +7,18 @@
               @method('POST')
         <form>
         <div class="input-group col-8">
-              <input class="" type="search" id="address" value="" name="address" placeholder="Dove vuoi andare?"></input>
+              <input class="" type="search" id="address" value="{{old('address')}}" name="address" placeholder="Dove vuoi andare?"></input>
         </div>
         <div class="input-group col-3">
           <button type="button" id="tasto" class="btn btn-primary">Cerca</button>
         </div>
         {{-- LONG --}}
         <div class="form-group">
-              <input type="hidden" class="form-control" name="longitude" id="longitude"></input>
+              <input type="hidden" class="form-control" name="longitude" id="longitude" value="{{$_GET['log']}}"></input>
         </div>
         {{-- LAT --}}
         <div class="form-group">
-              <input type="hidden" class="form-control" name="latitude" id="latitude"></input>
+              <input type="hidden" class="form-control" name="latitude" id="latitude" value="{{$_GET['lat']}}"></input>
         </div>
         <div class="search-view-filters">
             <div class="swfilters">
@@ -37,7 +37,7 @@
                     <div class="tab-pane fade" id="radius" role="tabpanel" aria-labelledby="radius-tab">
                         <div class="swstep">
                             <h5>Distanza in Km <span id="outputSlider" class="badge badge-primary"></span></h5>
-                            <input type="range" class="custom-range" min="0" max="250" step="10" value={{$radius}} id="myRange">
+                            <input type="range" class="custom-range" min="0" max="250" step="10" value={{$_GET['radius']}} id="myRange">
                         </div>
                     </div>
                     <div class="tab-pane fade" id="rooms" role="tabpanel" aria-labelledby="rooms-tab">
@@ -63,23 +63,21 @@
             <h2>Appartamenti in evidenza</h2>
         </div>
         <div class="cards-home-index">
-            @foreach ($promotions as $key => $promotion)
-                @foreach ($promotion->houses as $house)
-                    <div class="card-home-index">
-                        <a href="{{route('houses.show', $house->id)}}">
-                            <picture class="thumbnail">
-                                <img src="{{asset('storage/' .$house->photo)}}">
-                            </picture>
-                            <div class="card-content">
-                                <h2>{{$house->title}}</h2>
-                                <p>{{$house->description}}</p>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
+            @foreach ($sponsoredHouses as $key => $sponsoredHouse)
+                <div class="card-home-index">
+                    <a href="{{route('houses.show', $sponsoredHouse->id)}}">
+                        <picture class="thumbnail">
+                            <img src="{{asset('storage/' .$sponsoredHouse->photo)}}">
+                        </picture>
+                        <div class="card-content">
+                            <h2>{{$sponsoredHouse->title}}</h2>
+                            <p>{{$sponsoredHouse->description}}</p>
+                        </div>
+                    </a>
+                </div>
             @endforeach
         </div>
-        <div class="title-home-index searchs-sr">
+        <div class="title-home-index searchs-s">
             <h2>Appartamenti</h2>
         </div>
         <div id="js-cards" class="cards-home-index">

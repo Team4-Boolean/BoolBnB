@@ -40,8 +40,12 @@ class SearchController extends Controller
         //
         // };
 
-        $promotions = Promotion::orderBy('price', 'DESC')->paginate(6);
-        return view('guest.search',compact('promotions','houses','radius','services'));
+        $promotions = Promotion::orderBy('price', 'DESC')->get();
+        foreach ($promotions as $key => $promotion) {
+            $sponsoredHouses= $promotion->houses()->where('visible', '1')->limit(8)->get();
+        };
+
+        return view('guest.search',compact('houses','sponsoredHouses','services'));
     }
 
 }
