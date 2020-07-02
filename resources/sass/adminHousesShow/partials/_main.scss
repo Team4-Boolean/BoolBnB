@@ -1,0 +1,42 @@
+.container-adminHousesShow {
+	position: relative;
+	min-height: 1200px;
+	padding-top: 100px;
+	.card-ahs {
+		margin: auto;
+		display: block;
+		background-color: white;
+		width: 70%;
+		padding: 20px;
+		border-radius: 5px;
+		opacity: 0.95;
+		.list-group {
+			.list-group-item  {
+				color: black;
+				text-decoration: none;
+				font-weight: 600;
+				&:hover {
+					background-color: #fc5c5d;
+					color: white;
+				}
+			}
+		}
+		.card-data-ahs {
+			margin-bottom: 5px;
+			.badges-ahs {
+				margin-top: 5px;
+				.badge {
+					background-color: #fc5c5d;
+					color: white;
+				}
+			}
+		}
+	}
+	.carousel-item {
+		width: 100vw;
+	}
+	.badge {
+		font-size: 15px;
+	}
+
+}

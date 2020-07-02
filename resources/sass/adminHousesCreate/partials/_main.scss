@@ -1,0 +1,17 @@
+.custom-margin {
+    margin-top: 75px;
+    .custom-nav {
+        font-weight: bold;
+    }
+}
+.card-container-CreateHouses {
+    background-image: url('https://homehost.com.au/wp-content/uploads/2018/06/airbnb-1125x750.jpg');
+    background-repeat: repeat;
+    margin-bottom: 25px;
+    .card-header-custom {
+        margin-bottom: 10px;
+    }
+    .card-custom {
+        padding: 0 10px;
+    }
+}

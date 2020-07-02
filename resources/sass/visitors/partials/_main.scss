@@ -1,0 +1,16 @@
+.container-visitors-js-empty {
+    height: 70px;
+}
+
+.container-visitors-js {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container-visitors-grafico {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

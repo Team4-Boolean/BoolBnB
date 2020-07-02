@@ -1,0 +1,36 @@
+// Mobile display none
+.breadcrumb {
+    #mobile-show {
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .breadcrumb {
+        #mobile-show {
+            display: block;
+        }
+    }
+    .breadcrumb {
+        #mobile-none {
+            display: none;
+        }
+    }
+    .table {
+        .mobile-none {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .breadcrumb {
+        #mobile-show {
+            display: none;
+        }
+    }
+    .table {
+        .mobile-none {
+            display: none;
+        }
+    }
+}

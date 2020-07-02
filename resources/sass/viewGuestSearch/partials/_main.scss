@@ -1,0 +1,43 @@
+.container-home-index {
+	.centered {
+		.search-view-filters {
+			margin-top: 30px;
+			border-radius: 5px;
+			width: 100%;
+			a {
+				color: white;
+				background-color:#fc5c5d;
+				margin-left: 5px;
+			}
+			.tab-content {
+				margin: 10px;
+				.tab-pane{
+					background-color: white;
+					padding: 20px;
+					border-radius: 5px;
+					label {
+						display: block;
+						color: #fc5c5d;
+						text-align: center;
+					}
+					input {
+						flex: 0.7 auto;
+					}
+					.input-group {
+						justify-content: center;
+					}
+					.input-group-append,.input-group-prepend {
+						background: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
+						strong {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.container-home-index.chi-search .centered {
+	padding: 15px 0;
+}

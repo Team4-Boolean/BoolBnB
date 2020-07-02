@@ -1,0 +1,230 @@
+// Empty container messsages
+.container-messages-empty {
+    height: 120px;
+}
+
+// Admin messages index
+.container-messages-index {
+    width: 40%;
+    height: 550px;
+    float: left;
+    overflow-y: auto;
+    border: 1px solid #ff5a5f;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #f7f7f7;
+    .table {
+        thead {
+            font-size: 18px;
+        }
+        tbody {
+            font-size: 14px;
+            td {
+                &:first-child {
+                    &:hover {
+                        background-color: #ff5a5f;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Admin messages show
+.container-messages-show {
+    width: 60%;
+    height: 550px;
+    float: right;
+    border: 1px solid #ff5a5f;
+    border-left: hidden;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    .container-messages-top {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.8px solid #ff5a5f;
+        border-top-right-radius: 20px;
+        background-color: #ff5a5f;
+        .messages-top-img {
+            img {
+                height: 60px;
+                border-radius: 50px;
+            }
+        }
+        .messages-top-id {
+            padding-right: 10px;
+        }
+    }
+    .container-messages-body {
+        height: 80%;
+        background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://i.pinimg.com/474x/4f/f0/f2/4ff0f2470303da44f065cef5f14e169e.jpg');
+        background-position: center;
+        background-size: contain;
+        overflow-y: auto;
+        .body-left-messages {
+            width: 100%;
+            padding-left: 20px;
+            padding-top: 20px;
+            .container-left-messages {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                padding: 30px;
+            }
+        }
+        .body-right-messages {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            .container-right-messages {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                border-radius: 20px;
+                padding: 30px;
+            }
+        }
+    }
+    .container-messages-bottom {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 0.8px solid #ff5a5f;
+        background-color: #ff5a5f;
+        border-bottom-right-radius: 20px;
+        .messages-risp {
+            width: 500px;
+            border-radius: 5px;
+        }
+        .button {
+            margin-left: 20px;
+            font-size: 40px;
+            &:hover {
+                cursor: pointer;
+                color: white;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    // Admin messages index
+    .container-messages-index {
+        width: 100%;
+        height: 80%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        overflow-y: auto;
+        .table {
+            thead {
+                font-size: 12px;
+            }
+            tbody {
+                font-size: 12px;
+            }
+        }
+    }
+
+    // Admin messages show
+    .container-messages-show {
+        width: 100%;
+        height: 500px;
+        overflow-y: auto;
+        border-left: 1px solid #ff5a5f;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: none;
+        .container-messages-top {
+            height: 10%;
+            border-bottom: 0.8px solid #ff5a5f;
+            .messages-top-img {
+                img {
+                    display: none;
+                }
+            }
+            .messages-top-id {
+                padding-left: 20px;
+                h5 {
+                    font-size: 15px;
+                }
+            }
+        }
+        .container-messages-body {
+            background-size: cover;
+            .body-left-messages {
+                padding-left: 10px;
+                padding-top: 10px;
+                .container-left-messages {
+                    width: 50%;
+                    font-size: 12px;
+                    border-radius: 20px;
+                    padding: 30px;
+                }
+            }
+            .body-right-messages {
+                width: 100%;
+                padding-right: 0px;
+                .container-right-messages {
+                    margin-right:10px;
+                    border-radius: 20px;
+                    padding: 30px;
+                }
+            }
+        }
+        .container-messages-bottom {
+            border-bottom-left-radius: 20px;
+            .messages-risp {
+                width: 200px;
+            }
+            .button {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    // Admin messages index
+    .container-messages-index {
+        width: 50%;
+        height: 550px;
+        border: 1px solid #ff5a5f;
+    }
+
+    // Admin messages show
+    .container-messages-show {
+        width: 50%;
+        font-size: 20px;
+        .container-messages-body {
+            height: 80%;
+            background-size: cover;
+            .body-left-messages {
+                .container-left-messages {
+                    width: 50%;
+                }
+            }
+            .body-right-messages {
+                .container-right-messages {
+                    width: 50%;
+                }
+            }
+        }
+        .container-messages-bottom {
+            .messages-risp {
+                width: 250px;
+            }
+            .button {
+                margin-left: 10px;
+                font-size: 35px;
+            }
+        }
+    }
+}

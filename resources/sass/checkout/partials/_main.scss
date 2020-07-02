@@ -1,0 +1,25 @@
+.container-promotion-activate-empty {
+    height: 68px;
+}
+.container-promotion-activate-maxwidth {
+    height: 500px;
+    .container-promotion-activate-minwidth {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .container-promotion-activate-maxwidth {
+        .container-promotion-activate-minwidth {
+            h1 {
+                text-align: center;
+                font-size: 23px;
+            }
+        }
+    }
+}
