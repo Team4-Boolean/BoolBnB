@@ -29,7 +29,7 @@
                         {{-- TITLE --}}
                         <div class="form-group card-custom">
                                 <label for="title">Nome</label>
-                                <input type="text" class="form-control" name="title" id="title" placeholder="Nome appartamento" >{{old('title')}}</input>
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Nome appartamento" value="{{old('title')}}" ></input>
                             @error('title')
                                 <span class='alert alert-danger'>
                                     {{$message}}
