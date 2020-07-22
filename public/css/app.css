@@ -11900,121 +11900,6 @@ a.text-dark:focus {
   }
 }
 
-.container-GuestShowHouse {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.container-GuestShowHouse .card-gsh {
-  width: 80%;
-  padding-top: 100px;
-  background-color: white;
-  opacity: 0.95;
-  display: flex;
-  flex-direction: column;
-}
-
-.container-GuestShowHouse .card-gsh .house-photos {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-.container-GuestShowHouse .card-gsh .house-photos .img {
-  width: 100%;
-  position: relative;
-  margin-bottom: 25px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 500px;
-}
-
-.container-GuestShowHouse .card-gsh .separe {
-  border: 1px solid lightgray;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.container-GuestShowHouse .card-gsh .house-desc {
-  padding-top: 20px;
-  padding-bottom: 25px;
-}
-
-.container-GuestShowHouse .card-gsh .house-desc p {
-  color: black;
-}
-
-.container-GuestShowHouse .card-gsh .house-services {
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-.container-GuestShowHouse .card-gsh .house-services li {
-  list-style: none;
-  display: inline;
-  margin-right: 20px;
-  text-transform: capitalize;
-}
-
-.container-GuestShowHouse .card-gsh .house-services li i {
-  color: #ff5a5f;
-  margin-right: 7px;
-}
-
-.container-GuestShowHouse .card-gsh .house-footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.container-GuestShowHouse .card-gsh .house-footer .house-contact {
-  width: 50%;
-}
-
-.container-GuestShowHouse .card-gsh .house-footer .maps {
-  display: block;
-  width: 50%;
-  margin-top: 20px;
-  padding-left: 20px;
-}
-
-.container-GuestShowHouse .card-gsh .house-footer .maps #map-example-container {
-  height: 400px;
-  width: 100%;
-}
-
-.container-GuestShowHouse .card-gsh .house-footer .maps .search-hidden {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
-  .container-GuestShowHouse .card-gsh .house-photos .img {
-    height: auto;
-  }
-
-  .container-GuestShowHouse .card-gsh .house-footer {
-    display: block;
-  }
-
-  .container-GuestShowHouse .card-gsh .house-footer .house-contact {
-    width: 100%;
-  }
-
-  .container-GuestShowHouse .card-gsh .house-footer .maps {
-    display: block;
-    width: 100%;
-  }
-
-  .container-GuestShowHouse .card-gsh .house-footer .maps #map-example-container {
-    height: 300px;
-    width: 100%;
-  }
-}
-
 .container-home-index .centered .search-view-filters {
   margin-top: 30px;
   border-radius: 5px;
@@ -12134,7 +12019,7 @@ a.text-dark:focus {
 }
 
 .container-AdminPhotosCreate {
-  padding-top: 40px;
+  padding-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12163,8 +12048,8 @@ a.text-dark:focus {
   margin-bottom: 40px;
 }
 
-.container-AdminPhotosCreate {
-  padding-top: 40px;
+.container-AdminPhotosEdit {
+  padding-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12172,18 +12057,18 @@ a.text-dark:focus {
   background-color: lightgray;
 }
 
-.container-AdminPhotosCreate .photo-header {
+.container-AdminPhotosEdit .photo-header {
   width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container-AdminPhotosCreate .photo-header nav {
+.container-AdminPhotosEdit .photo-header nav {
   width: 100%;
 }
 
-.container-AdminPhotosCreate .card-apc {
+.container-AdminPhotosEdit .card-ape {
   width: 80%;
   padding-top: 40px;
   padding-left: 30px;
@@ -12191,6 +12076,19 @@ a.text-dark:focus {
   background-color: white;
   opacity: 0.95;
   margin-bottom: 40px;
+}
+
+.container-AdminPhotosEdit .card-ape .img {
+  margin-bottom: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 500px;
+}
+
+@media screen and (max-width: 800px) {
+  .container-AdminPhotosEdit .card-ape .img {
+    height: auto;
+  }
 }
 
 .list-group-horizontal {
