@@ -11009,7 +11009,7 @@ a.text-dark:focus {
   display: block;
   float: left;
   font-size: 2em;
-  padding: 1px 20px;
+  padding: 1px;
   text-decoration: none;
 }
 
@@ -11154,7 +11154,7 @@ a.text-dark:focus {
   display: block;
   float: left;
   font-size: 2em;
-  padding: 1px 20px;
+  padding: 1px;
   text-decoration: none;
 }
 
@@ -11904,6 +11904,10 @@ a.text-dark:focus {
   margin-top: 30px;
   border-radius: 5px;
   width: 100%;
+}
+
+.container-home-index .centered .search-view-filters .nav {
+  justify-content: center;
 }
 
 .container-home-index .centered .search-view-filters a {
