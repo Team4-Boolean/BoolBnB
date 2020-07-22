@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="row justify-content-center custom-margin">
+    <div class="row justify-content-center custom-margin" style="margin-left:0;margin-right:0">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb custom-nav">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -11,7 +11,7 @@
     </div>
     <div class="card-container-CreateHouses">
         <div class="">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" style="margin:0">
                 <div class="bg-light card w-75">
                     <form class="" action="{{route('admin.houses.update',$house->id)}}"  method="post" enctype="multipart/form-data">
                         @csrf
