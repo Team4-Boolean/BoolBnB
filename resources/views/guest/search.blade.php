@@ -96,10 +96,10 @@
             @endforeach
         </div>
         <script id="card-template-search" type="text/x-handlebars-template">
-            <div id="js-card" class="card-home-index" data-rooms = "@{{rooms}}" data-beds ="@{{beds}}" data-services ="@{{services}}" >
-                <a href="">
+            <div id="js-card" class="card-home-index" data-rooms = "@{{rooms}}" data-beds ="@{{beds}}" data-services ="@{{services}}">
+                <a href="http://127.0.0.1:8000/houses/@{{id}}">
                     <picture class="thumbnail">
-                        <img src="{{asset('storage/')}}">
+                        <img src="http://127.0.0.1:8000/storage/@{{photo}}">
                     </picture>
                     <div class="card-content">
                         <h2>@{{title}}</h2>
